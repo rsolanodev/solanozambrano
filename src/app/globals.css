@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #FFF7FA;
-  --color-surface: #FFFFFF;
-  --color-surface-variant: #FFEFF4;
-  --color-primary: #FF8AA5;
-  --color-primary-soft: #FFD5E0;
-  --color-secondary: #FFC6D6;
-  --color-text-primary: #1F1F1F;
-  --color-text-secondary: #808080;
-  --color-border-subtle: #F3E3EA;
+  --color-background: #121116;
+  --color-surface: #201D26;
+  --color-surface-variant: #2C2732;
+  --color-primary: #F7C85F;
+  --color-primary-soft: #3D3340;
+  --color-secondary: #F4A7B9;
+  --color-text-primary: #FFF8FC;
+  --color-text-secondary: #BEB6C1;
+  --color-border-subtle: #3B3540;
   --color-success: #5BC8A8;
-  --color-chart-primary: #FF8AA5;
-  --color-chart-secondary: #FFE4EC;
+  --color-chart-primary: #F7C85F;
+  --color-chart-secondary: #3D3340;
 
   --font-rounded: "SF Pro Rounded", ui-rounded, "Segoe UI Rounded", system-ui, sans-serif;
   --font-text: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -29,7 +29,7 @@
   --spacing-xl: 32px;
 }
 
-/* Typography styles according to DESIGN.md */
+/* Typography styles shared by profile design documents. */
 @utility text-headline-lg {
   font-family: var(--font-rounded);
   font-size: 28px;

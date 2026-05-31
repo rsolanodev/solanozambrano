@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from "vitest";
+import { compressToBase64 } from "lz-string";
 import { generateExport, decodeExport, mergeImport } from "./export";
 import { getRecordByDate, getAppointmentsByDate, getAllRecords, getAllAppointments, clearDB } from "./db";
-import type { PressureRecord, Appointment } from "./types";
 
 describe("generateExport / decodeExport", () => {
   beforeEach(async () => {
@@ -40,7 +40,6 @@ describe("generateExport / decodeExport", () => {
 
   it("throws on unknown version", () => {
     const json = JSON.stringify({ version: 99, records: [], appointments: [] });
-    const { compressToBase64 } = require("lz-string");
     const encoded = compressToBase64(json);
     expect(() => decodeExport(encoded)).toThrow("Versión de exportación no soportada: 99");
   });

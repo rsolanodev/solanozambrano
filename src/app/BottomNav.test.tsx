@@ -10,7 +10,7 @@ vi.mock("next/navigation", () => ({
 
 describe("BottomNav", () => {
   it("renders all three links", () => {
-    mockUsePathname.mockReturnValue("/");
+    mockUsePathname.mockReturnValue("/albany/tensiometro");
     render(<BottomNav />);
 
     expect(screen.getByText("Diario")).toBeDefined();
@@ -18,8 +18,8 @@ describe("BottomNav", () => {
     expect(screen.getByText("Métricas")).toBeDefined();
   });
 
-  it("highlights Diario when pathname is /", () => {
-    mockUsePathname.mockReturnValue("/");
+  it("highlights Diario when pathname is /albany/tensiometro", () => {
+    mockUsePathname.mockReturnValue("/albany/tensiometro");
     render(<BottomNav />);
 
     const diario = screen.getByText("Diario");
@@ -32,8 +32,8 @@ describe("BottomNav", () => {
     expect(metricas.className).toContain("text-text-secondary");
   });
 
-  it("highlights Calendario when pathname is /calendario", () => {
-    mockUsePathname.mockReturnValue("/calendario");
+  it("highlights Calendario when pathname is /albany/tensiometro/calendario", () => {
+    mockUsePathname.mockReturnValue("/albany/tensiometro/calendario");
     render(<BottomNav />);
 
     const diario = screen.getByText("Diario");
@@ -46,8 +46,8 @@ describe("BottomNav", () => {
     expect(metricas.className).toContain("text-text-secondary");
   });
 
-  it("highlights Métricas when pathname is /metricas", () => {
-    mockUsePathname.mockReturnValue("/metricas");
+  it("highlights Métricas when pathname is /albany/tensiometro/metricas", () => {
+    mockUsePathname.mockReturnValue("/albany/tensiometro/metricas");
     render(<BottomNav />);
 
     const diario = screen.getByText("Diario");
@@ -61,13 +61,13 @@ describe("BottomNav", () => {
   });
 
   it("links point to the correct routes", () => {
-    mockUsePathname.mockReturnValue("/");
+    mockUsePathname.mockReturnValue("/albany/tensiometro");
     render(<BottomNav />);
 
     const links = screen.getAllByRole("link");
     expect(links).toHaveLength(3);
-    expect(links[0].getAttribute("href")).toBe("/");
-    expect(links[1].getAttribute("href")).toBe("/calendario");
-    expect(links[2].getAttribute("href")).toBe("/metricas");
+    expect(links[0].getAttribute("href")).toBe("/albany/tensiometro");
+    expect(links[1].getAttribute("href")).toBe("/albany/tensiometro/calendario");
+    expect(links[2].getAttribute("href")).toBe("/albany/tensiometro/metricas");
   });
 });

@@ -9,7 +9,7 @@ vi.mock("@/lib/export", () => ({
   mergeImport: vi.fn(),
 }));
 
-import { generateExport, decodeExport, mergeImport } from "@/lib/export";
+import { decodeExport, mergeImport } from "@/lib/export";
 
 Object.assign(navigator, {
   clipboard: { writeText: vi.fn() },

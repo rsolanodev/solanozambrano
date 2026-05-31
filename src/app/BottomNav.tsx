@@ -7,17 +7,17 @@ const items = [
   {
     key: "diario",
     label: "Diario",
-    href: "/",
+    path: "",
   },
   {
     key: "calendar",
     label: "Calendario",
-    href: "/calendario",
+    path: "calendario",
   },
   {
     key: "metricas",
     label: "Métricas",
-    href: "/metricas",
+    path: "metricas",
   },
 ];
 
@@ -65,17 +65,29 @@ function Icon({ active, type }: { active: boolean; type: string }) {
   );
 }
 
-export default function BottomNav() {
+function getHref(basePath: string, path: string) {
+  const normalizedBase = basePath.endsWith("/")
+    ? basePath.slice(0, -1)
+    : basePath;
+  return path ? `${normalizedBase}/${path}` : normalizedBase;
+}
+
+export default function BottomNav({
+  basePath = "/albany/tensiometro",
+}: {
+  basePath?: string;
+}) {
   const pathname = usePathname();
 
   return (
     <nav className="bottom-nav">
       {items.map((item) => {
-        const active = pathname === item.href;
+        const href = getHref(basePath, item.path);
+        const active = pathname === href;
         return (
           <Link
             key={item.key}
-            href={item.href}
+            href={href}
             className="flex flex-col items-center gap-xs"
           >
             <Icon active={active} type={item.key} />

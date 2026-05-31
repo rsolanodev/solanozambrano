@@ -9,6 +9,15 @@ function formatToSpainParts(date: Date) {
   }).formatToParts(date);
 }
 
+function shiftDateStr(dateStr: string, days: number) {
+  const [year, month, day] = dateStr.split("-").map(Number);
+  const shifted = new Date(Date.UTC(year, month - 1, day + days));
+  const shiftedYear = shifted.getUTCFullYear();
+  const shiftedMonth = String(shifted.getUTCMonth() + 1).padStart(2, "0");
+  const shiftedDay = String(shifted.getUTCDate()).padStart(2, "0");
+  return `${shiftedYear}-${shiftedMonth}-${shiftedDay}`;
+}
+
 export function getSpainToday(): string {
   const parts = formatToSpainParts(new Date());
   const year = parts.find((p) => p.type === "year")!.value;
@@ -39,9 +48,7 @@ export function formatDateLabel(dateStr: string) {
 
   if (dateStr === todayStr) return "Hoy";
 
-  const yesterday = new Date(todayStr + "T00:00:00");
-  yesterday.setDate(yesterday.getDate() - 1);
-  const yesterdayStr = yesterday.toISOString().slice(0, 10);
+  const yesterdayStr = shiftDateStr(todayStr, -1);
 
   if (dateStr === yesterdayStr) return "Ayer";
 

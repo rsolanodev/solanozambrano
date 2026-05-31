@@ -67,7 +67,7 @@ describe("db", () => {
   });
 
   it("updates an existing record", async () => {
-    const id = await addRecord(baseRecord);
+    await addRecord(baseRecord);
     const record = await getRecordByDate("2026-05-22");
 
     await updateRecord({ ...record!, systolic: 130 });
@@ -97,7 +97,7 @@ describe("db", () => {
   it("saveRecord updates existing record if date already exists", async () => {
     await addRecord(baseRecord);
 
-    const id = await saveRecord({
+    await saveRecord({
       ...baseRecord,
       systolic: 130,
     });

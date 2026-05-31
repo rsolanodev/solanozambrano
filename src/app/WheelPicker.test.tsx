@@ -1,6 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import WheelPicker from "@/app/WheelPicker";
 
 describe("WheelPicker", () => {
@@ -35,6 +34,7 @@ describe("WheelPicker", () => {
     const container = screen.getByText("118").closest("[style*='scroll-snap-type']")!;
     expect(container).toBeDefined();
 
+    container.scrollTop = 3 * 36;
     container.dispatchEvent(new Event("scroll", { bubbles: true }));
 
     await vi.waitFor(() => {

@@ -1,5 +1,5 @@
 import { compressToBase64, decompressFromBase64 } from "lz-string";
-import type { ExportData, ExportDataV1, PressureRecord, Appointment } from "./types";
+import type { ExportData, ExportDataV1 } from "./types";
 import { clearDB, saveRecord, addAppointment, getAllRecords, getAllAppointments } from "./db";
 
 const CURRENT_VERSION = 1 as const;
