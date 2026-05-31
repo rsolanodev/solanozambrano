@@ -1,0 +1,30 @@
+:root,
+[data-profile-theme="family"] {
+  --color-background: #FFF6F0;
+  --color-surface: #FFFFFF;
+  --color-surface-variant: #FFF0E8;
+  --color-primary: #FF7A90;
+  --color-primary-soft: #FFE1E8;
+  --color-secondary: #68BDF0;
+  --color-text-primary: #28232A;
+  --color-text-secondary: #817783;
+  --color-border-subtle: #F1DDE1;
+  --color-success: #5BC8A8;
+  --color-chart-primary: #FF7A90;
+  --color-chart-secondary: #FFE1E8;
+}
+
+[data-profile-theme="albany"] {
+  --color-background: #FFF7FA;
+  --color-surface: #FFFFFF;
+  --color-surface-variant: #FFEFF4;
+  --color-primary: #FF8AA5;
+  --color-primary-soft: #FFD5E0;
+  --color-secondary: #FFC6D6;
+  --color-text-primary: #1F1F1F;
+  --color-text-secondary: #808080;
+  --color-border-subtle: #F3E3EA;
+  --color-success: #5BC8A8;
+  --color-chart-primary: #FF8AA5;
+  --color-chart-secondary: #FFE4EC;
+}
