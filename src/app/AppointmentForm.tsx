@@ -39,7 +39,7 @@ export default function AppointmentForm({
     <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/30">
       <form
         onSubmit={handleSubmit}
-        className="card-surface w-full sm:max-w-md rounded-b-none sm:rounded-b-md max-h-[90vh] overflow-y-auto"
+        className="card-surface w-full sm:max-w-[28rem] rounded-b-none sm:rounded-b-md max-h-[90vh] overflow-y-auto"
       >
         <div className="flex items-center justify-between mb-lg">
           <h2 className="text-headline-sm">Nueva cita</h2>

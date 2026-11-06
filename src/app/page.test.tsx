@@ -18,10 +18,17 @@ describe("ProfileSelectionPage", () => {
     expect(albany.getAttribute("href")).toBe("/albany");
   });
 
+  it("links Alaia to her scoped app", () => {
+    render(<ProfileSelectionPage />);
+
+    const alaia = screen.getByRole("link", { name: /entrar como alaia/i });
+    expect(alaia.getAttribute("href")).toBe("/alaia");
+  });
+
   it("keeps pending profiles disabled", () => {
     render(<ProfileSelectionPage />);
 
-    for (const name of [/hogar pendiente/i, /rubén pendiente/i, /alaia pendiente/i, /coco pendiente/i]) {
+    for (const name of [/hogar pendiente/i, /rubén pendiente/i, /coco pendiente/i]) {
       expect((screen.getByRole("button", { name }) as HTMLButtonElement).disabled).toBe(true);
     }
   });

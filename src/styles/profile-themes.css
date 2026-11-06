@@ -28,3 +28,18 @@
   --color-chart-primary: #FF8AA5;
   --color-chart-secondary: #FFE4EC;
 }
+
+[data-profile-theme="alaia"] {
+  --color-background: #FAF7FF;
+  --color-surface: #FFFFFF;
+  --color-surface-variant: #F1EAFF;
+  --color-primary: #7C3AED;
+  --color-primary-soft: #EDE4FF;
+  --color-secondary: #C4B5FD;
+  --color-text-primary: #241C3A;
+  --color-text-secondary: #6B6280;
+  --color-border-subtle: #E8DDF7;
+  --color-success: #5BC8A8;
+  --color-chart-primary: #7C3AED;
+  --color-chart-secondary: #EDE4FF;
+}

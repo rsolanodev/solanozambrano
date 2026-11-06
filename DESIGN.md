@@ -11,9 +11,10 @@ ese perfil.
 | Selector familiar | `/` | Este archivo | `family` |
 | Albany launcher | `/albany` | `DESIGN_ALBANY.md` | `albany` |
 | Albany - Tensiómetro | `/albany/tensiometro/**` | `DESIGN_ALBANY.md` | `albany` |
+| Alaia launcher | `/alaia` | `DESIGN_ALAIA.md` | `alaia` |
+| Alaia - Animales | `/alaia/animales/**` | `DESIGN_ALAIA.md` | `alaia` |
 | Hogar | Pendiente | Pendiente | Pendiente |
 | Rubén | Pendiente | Pendiente | Pendiente |
-| Alaia | Pendiente | Pendiente | Pendiente |
 | Coco | Pendiente | Pendiente | Pendiente |
 
 ## Contrato de Implementación
@@ -53,3 +54,13 @@ parrilla de iconos centrada. Actualmente solo muestra `Tensiómetro`.
 
 La app `Tensiómetro` vive bajo `/albany/tensiometro/**` y mantiene la navegación
 interna de Diario, Calendario y Métricas.
+
+## Apps de Alaia
+
+La ruta `/alaia` es el espacio propio de Alaia. Debe mostrar una tarjeta grande
+con la app `Animales` y un enlace claro de vuelta al selector familiar.
+
+La app `Animales` vive bajo `/alaia/animales/**` y muestra una cuadrícula de
+animales con poster, nombre y onomatopeya. Al tocar uno se abre un reproductor
+con video real en loop y el sonido del animal. Los medios son locales y los
+créditos están disponibles en `/alaia/animales/creditos`.

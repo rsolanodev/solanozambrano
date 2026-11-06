@@ -46,6 +46,7 @@ export const profiles: Profile[] = [
     slug: "alaia",
     name: "Alaia",
     initials: "AI",
+    href: "/alaia",
     theme: "alaia",
     accent: "#9F7AEA",
     accentSoft: "#EEE7FF",

@@ -27,9 +27,20 @@
   --spacing-md: 16px;
   --spacing-lg: 24px;
   --spacing-xl: 32px;
+
+  /* Ojo: las claves sm/md/lg/xl de espaciado hacen que Tailwind resuelva
+     max-w-sm/md/lg/xl contra estos valores (p. ej. 16px). Para anchos de
+     contenedor usar valores explícitos: max-w-[28rem]. */
 }
 
 /* Typography styles shared by profile design documents. */
+@utility text-display {
+  font-family: var(--font-rounded);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 42px;
+}
+
 @utility text-headline-lg {
   font-family: var(--font-rounded);
   font-size: 28px;
@@ -208,6 +219,50 @@ body {
   align-items: center;
   border: 1px solid var(--color-border-subtle);
 }
+
+/* ─── Alaia animal player motion ───────────────────────────── */
+
+@keyframes alaia-player-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes alaia-sound-wave {
+  0%,
+  100% {
+    transform: scaleY(0.35);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.alaia-player-enter {
+  animation: alaia-player-in 200ms ease-out;
+}
+
+.alaia-sound-bar {
+  transform-origin: bottom;
+  animation: alaia-sound-wave 700ms ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .alaia-player-enter,
+  .alaia-sound-bar {
+    animation: none;
+  }
+
+  .alaia-sound-bar {
+    transform: none;
+  }
+}
+
 
 /* ─── Print / Report styles ───────────────────────────────── */
 
