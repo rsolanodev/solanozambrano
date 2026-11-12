@@ -81,6 +81,16 @@ animal-accents:
   elefante: "#E2E8F0"
   mono: "#E4F5E8"
   rana: "#DDF7E3"
+  burro: "#EDE3D2"
+  cabra: "#E5F1D8"
+  gallina: "#FFF6D8"
+  pajaro: "#E3F6F1"
+  loro: "#E7F8D8"
+  tigre: "#FFE2C2"
+  oso: "#EADFD4"
+  delfin: "#D9EEFF"
+  ballena: "#DDE4FF"
+  abeja: "#FFF0B8"
 
 components:
   app-tile:
@@ -100,6 +110,17 @@ components:
     textColor: "{colors.text-primary}"
     mediaRounded: "{rounded.lg}"
     mediaMaxWidth: 512px
+  sign-card:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.text-primary}"
+    rounded: "{rounded.md}"
+    imageAspect: "2 / 1"
+  sign-toggle:
+    backgroundColor: "{colors.primary-soft}"
+    textColor: "{colors.text-primary}"
+    typography: "{typography.label-sm}"
+    rounded: "{rounded.full}"
+    minHeight: 44px
   sound-button:
     backgroundColor: "{colors.primary}"
     textColor: "{colors.surface}"
@@ -204,11 +225,31 @@ tipografía de texto del sistema para mantener legibilidad.
 - **Animal player**: diálogo modal a pantalla completa con video cuadrado,
   nombre, onomatopeya, contador, botón "Otra vez", flechas anterior/siguiente y
   cierre. El video va mudo y en loop; el sonido es independiente.
+- **Sign card**: vista secundaria del reproductor con la imagen del signo en LSE
+  (proporción 2:1), el dibujo del animal y la secuencia del signo. Se abre con
+  el botón "Ver signo LSE" y se vuelve al video con "Ver el animal". La imagen
+  es estática y no sustituye al video ni al audio.
+- **Sign toggle**: botón pill suave sobre los controles del reproductor. Debe
+  medir al menos 44 px de alto y dejar claro con `aria-pressed` si el signo está
+  visible.
 - **Sound button**: acción principal del reproductor, grande y en color primario.
   Repite el audio sin reiniciar el video.
 - **Player arrow**: control circular de 56×56 px para cambiar de animal.
 - **Chip animal**: píldora con la onomatopeya, usando el acento pastel del animal.
 - **Credits link**: enlace discreto en el pie de la cuadrícula, para adultos.
+
+## Lengua de Signos Española
+
+Cada animal incluye cómo se dice en lengua de signos española (LSE) mediante
+una imagen de la Fundación CNSE (banco "Mis primeros signos" y DILSE). La imagen
+muestra el dibujo del animal y la secuencia del signo con flechas de movimiento.
+
+- El signo es una vista secundaria del reproductor, no la acción principal.
+- No se reproduce solo ni se anima; se muestra al tocar "Ver signo LSE".
+- La atribución y la licencia viven en la página de créditos, no en el flujo
+  principal del niño.
+- Las imágenes mantienen fondo blanco y alto contraste para que manos y flechas
+  se lean bien en móvil.
 
 ## Motion
 

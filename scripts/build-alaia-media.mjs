@@ -18,11 +18,13 @@ const publicDir = path.join(root, "public/alaia/animales");
 const videoDir = path.join(publicDir, "video");
 const posterDir = path.join(publicDir, "poster");
 const audioDir = path.join(publicDir, "audio");
+const signDir = path.join(publicDir, "signos");
 const tmpDir = path.join(root, "tmp/alaia-media");
 
 await mkdir(videoDir, { recursive: true });
 await mkdir(posterDir, { recursive: true });
 await mkdir(audioDir, { recursive: true });
+await mkdir(signDir, { recursive: true });
 await mkdir(tmpDir, { recursive: true });
 
 function run(command, args) {
@@ -110,8 +112,10 @@ for (const animal of animals) {
   const videoPath = path.join(root, "public", animal.video.replace(/^\//, ""));
   const posterPath = path.join(root, "public", animal.poster.replace(/^\//, ""));
   const audioPath = path.join(root, "public", animal.audio.replace(/^\//, ""));
+  const signPath = path.join(root, "public", animal.sign.image.replace(/^\//, ""));
   const sourceVideo = path.join(tmpDir, `${animal.id}-source.mp4`);
   const sourceAudio = path.join(tmpDir, `${animal.id}-source.mp3`);
+  const sourceSign = path.join(tmpDir, `${animal.id}-source-sign.png`);
 
   try {
     if (!isFresh(videoPath)) {
@@ -219,13 +223,37 @@ for (const animal of animals) {
       console.log("  audio · existe");
     }
 
+    if (!isFresh(signPath)) {
+      console.log("  signo · descargando de Fundación CNSE");
+      await download(animal.sign.source.downloadUrl, sourceSign);
+      console.log("  signo · recortando y optimizando");
+      await run(ffmpeg, [
+        "-y",
+        "-i",
+        sourceSign,
+        "-vf",
+        "scale=960:480:force_original_aspect_ratio=decrease,pad=960:480:(ow-iw)/2:(oh-ih)/2:color=white,format=rgb24",
+        "-frames:v",
+        "1",
+        "-q:v",
+        "3",
+        signPath,
+      ]);
+      await rm(sourceSign, { force: true });
+    } else {
+      console.log("  signo · existe");
+    }
+
     const videoSize = assertSize(videoPath, 2_000_000, "video");
     const posterSize = assertSize(posterPath, 300_000, "poster");
     const audioSize = assertSize(audioPath, 500_000, "audio");
+    const signSize = assertSize(signPath, 250_000, "signo");
     console.log(
       `  ✓ ${(videoSize / 1024).toFixed(0)}KB video · ${(posterSize / 1024).toFixed(
         0
-      )}KB poster · ${(audioSize / 1024).toFixed(0)}KB audio`
+      )}KB poster · ${(audioSize / 1024).toFixed(0)}KB audio · ${(
+        signSize / 1024
+      ).toFixed(0)}KB signo`
     );
     processed += 1;
   } catch (error) {
@@ -239,13 +267,14 @@ const credits = animals
     (animal) =>
       `## ${animal.name}\n\n` +
       `- **Video**: [${animal.sources.video.provider}](${animal.sources.video.page}) — ${animal.sources.video.author} (${animal.sources.video.license}).\n` +
-      `- **Audio**: [${animal.sources.audio.title}](${animal.sources.audio.page}) — ${animal.sources.audio.author} (${animal.sources.audio.license}).\n`
+      `- **Audio**: [${animal.sources.audio.title}](${animal.sources.audio.page}) — ${animal.sources.audio.author} (${animal.sources.audio.license}).\n` +
+      `- **Signo LSE**: [${animal.sign.source.provider}](${animal.sign.source.page}) — ${animal.sign.source.author} (${animal.sign.source.license}).\n`
   )
   .join("\n");
 
 await writeFile(
   path.join(publicDir, "CREDITS.md"),
-  `# Créditos de Animales\n\nLos videos son material de stock de Pexels. Los sonidos provienen de Wikimedia Commons y conservan su licencia original. Los archivos locales están recortados y normalizados para la app.\n\n${credits}`,
+  `# Créditos de Animales\n\nLos videos son material de stock de Pexels. Los sonidos provienen de Wikimedia Commons. Los signos provienen de la Fundación CNSE. Todos conservan su licencia original y los archivos locales están recortados y normalizados para la app.\n\n${credits}`,
   "utf8"
 );
 

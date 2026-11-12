@@ -17,12 +17,12 @@ afterEach(() => {
 });
 
 describe("AnimalsPage", () => {
-  it("renders 12 accessible animal cards without autoplaying audio", () => {
+  it("renders 22 accessible animal cards without autoplaying audio", () => {
     render(<AnimalsPage />);
 
     expect(
       screen.getAllByRole("button", { name: /^Escuchar/ })
-    ).toHaveLength(12);
+    ).toHaveLength(22);
     expect(
       screen.getByRole("button", { name: "Escuchar a la vaca" })
     ).toBeInTheDocument();
@@ -41,7 +41,7 @@ describe("AnimalsPage", () => {
     expect(screen.getByRole("dialog")).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Vaca" })).toBeInTheDocument();
     expect(within(screen.getByRole("dialog")).getByText("¡Muuu!")).toBeInTheDocument();
-    expect(screen.getByText("1 de 12")).toBeInTheDocument();
+    expect(screen.getByText("1 de 22")).toBeInTheDocument();
     expect(playMock).toHaveBeenCalledTimes(1);
 
     const audio = document.querySelector("audio");
@@ -75,6 +75,55 @@ describe("AnimalsPage", () => {
     );
   });
 
+  it("shows the LSE sign and returns to the animal video", async () => {
+    const user = userEvent.setup();
+    render(<AnimalsPage />);
+
+    await user.click(screen.getByRole("button", { name: "Escuchar a la vaca" }));
+    await user.click(
+      screen.getByRole("button", {
+        name: "Ver signo en Lengua de Signos Española",
+      })
+    );
+
+    expect(document.querySelector("video")).toBeNull();
+    expect(
+      screen.getByRole("img", { name: /signo de vaca en lengua de signos/i })
+    ).toHaveAttribute("src", "/alaia/animales/signos/vaca.jpg");
+    expect(screen.getByText(/así se dice en lse/i)).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: "Ver el animal" })
+    ).toHaveAttribute("aria-pressed", "true");
+
+    await user.click(screen.getByRole("button", { name: "Ver el animal" }));
+
+    expect(document.querySelector("video")).not.toBeNull();
+    expect(
+      screen.queryByRole("img", { name: /signo de vaca en lengua de signos/i })
+    ).not.toBeInTheDocument();
+  });
+
+  it("returns to the animal view when navigating to another animal", async () => {
+    const user = userEvent.setup();
+    render(<AnimalsPage />);
+
+    await user.click(screen.getByRole("button", { name: "Escuchar a la vaca" }));
+    await user.click(
+      screen.getByRole("button", {
+        name: "Ver signo en Lengua de Signos Española",
+      })
+    );
+    await user.click(screen.getByRole("button", { name: "Animal siguiente" }));
+
+    expect(screen.getByRole("heading", { name: "Oveja" })).toBeInTheDocument();
+    expect(document.querySelector("video")).not.toBeNull();
+    expect(
+      screen.getByRole("button", {
+        name: "Ver signo en Lengua de Signos Española",
+      })
+    ).toHaveAttribute("aria-pressed", "false");
+  });
+
   it("navigates to the next and previous animal with wrap-around", async () => {
     const user = userEvent.setup();
     render(<AnimalsPage />);
@@ -83,7 +132,7 @@ describe("AnimalsPage", () => {
     await user.click(screen.getByRole("button", { name: "Animal siguiente" }));
 
     expect(screen.getByRole("heading", { name: "Oveja" })).toBeInTheDocument();
-    expect(screen.getByText("2 de 12")).toBeInTheDocument();
+    expect(screen.getByText("2 de 22")).toBeInTheDocument();
     expect(document.querySelector("audio")?.getAttribute("src")).toBe(
       "/alaia/animales/audio/oveja.mp3"
     );
@@ -92,8 +141,8 @@ describe("AnimalsPage", () => {
     expect(screen.getByRole("heading", { name: "Vaca" })).toBeInTheDocument();
 
     await user.click(screen.getByRole("button", { name: "Animal anterior" }));
-    expect(screen.getByRole("heading", { name: "Rana" })).toBeInTheDocument();
-    expect(screen.getByText("12 de 12")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Abeja" })).toBeInTheDocument();
+    expect(screen.getByText("22 de 22")).toBeInTheDocument();
   });
 
   it("closes the player, pauses the audio and restores focus", async () => {
@@ -223,7 +272,7 @@ describe("AnimalsPage", () => {
     const dialog = screen.getByRole("dialog");
     expect(dialog).toHaveAttribute("aria-modal", "true");
     expect(dialog).toHaveAttribute("aria-labelledby", "animal-player-title");
-    expect(screen.getByText("1 de 12")).toHaveAttribute("aria-live", "polite");
+    expect(screen.getByText("1 de 22")).toHaveAttribute("aria-live", "polite");
     expect(
       screen.getByRole("button", { name: "Cerrar reproductor" })
     ).toHaveFocus();

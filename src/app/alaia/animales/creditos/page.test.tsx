@@ -15,13 +15,23 @@ const animalNames = [
   "Elefante",
   "Mono",
   "Rana",
+  "Burro",
+  "Cabra",
+  "Gallina",
+  "Pájaro",
+  "Loro",
+  "Tigre",
+  "Oso",
+  "Delfín",
+  "Ballena",
+  "Abeja",
 ];
 
 describe("AnimalCreditsPage", () => {
   it("lists all animals with video and audio credits", () => {
     render(<AnimalCreditsPage />);
 
-    expect(screen.getAllByRole("heading", { level: 2 })).toHaveLength(12);
+    expect(screen.getAllByRole("heading", { level: 2 })).toHaveLength(22);
     for (const name of animalNames) {
       expect(screen.getByRole("heading", { name })).toBeInTheDocument();
     }
@@ -37,8 +47,16 @@ describe("AnimalCreditsPage", () => {
     });
     expect(audioLink).toHaveAttribute("target", "_blank");
     expect(audioLink).toHaveAttribute("rel", "noreferrer");
+
+    const signLink = screen.getByRole("link", {
+      name: /signo de vaca en fundación cnse/i,
+    });
+    expect(signLink).toHaveAttribute("target", "_blank");
+    expect(signLink).toHaveAttribute("rel", "noreferrer");
+
     expect(screen.getAllByText(/CC BY-SA 3\.0/).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/Secretlondon/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/CC BY-NC-SA 3\.0/).length).toBeGreaterThan(0);
   });
 
   it("marks every external source link as external", () => {
@@ -48,7 +66,7 @@ describe("AnimalCreditsPage", () => {
       .getAllByRole("link")
       .filter((link) => link.getAttribute("href")?.startsWith("https://"));
 
-    expect(externalLinks.length).toBe(24);
+    expect(externalLinks.length).toBe(66);
     for (const link of externalLinks) {
       expect(link).toHaveAttribute("target", "_blank");
       expect(link).toHaveAttribute("rel", "noreferrer");

@@ -31,6 +31,17 @@
         "duration": 6,
         "trimSilence": true
       }
+    },
+    "sign": {
+      "image": "/alaia/animales/signos/vaca.jpg",
+      "alt": "Signo de vaca en Lengua de Signos Española (LSE): ilustración del animal y secuencia del signo.",
+      "source": {
+        "provider": "Fundación CNSE · Mis primeros signos",
+        "page": "https://www.fundacioncnse.org/educa/bancolse/animales-vaca.php",
+        "author": "Fundación CNSE",
+        "license": "CC BY-NC-SA 3.0",
+        "downloadUrl": "https://www.fundacioncnse.org/educa/bancolse/naturaleza/animales/descargas/vaca2-sinlogo.png"
+      }
     }
   },
   {
@@ -65,6 +76,17 @@
         "duration": 6,
         "trimSilence": true
       }
+    },
+    "sign": {
+      "image": "/alaia/animales/signos/oveja.jpg",
+      "alt": "Signo de oveja en Lengua de Signos Española (LSE): ilustración del animal y secuencia del signo.",
+      "source": {
+        "provider": "Fundación CNSE · Mis primeros signos",
+        "page": "https://www.fundacioncnse.org/educa/bancolse/animales-oveja.php",
+        "author": "Fundación CNSE",
+        "license": "CC BY-NC-SA 3.0",
+        "downloadUrl": "https://www.fundacioncnse.org/educa/bancolse/naturaleza/animales/descargas/oveja2-sinlogo.png"
+      }
     }
   },
   {
@@ -98,6 +120,17 @@
         "start": 0,
         "duration": 6,
         "trimSilence": true
+      }
+    },
+    "sign": {
+      "image": "/alaia/animales/signos/caballo.jpg",
+      "alt": "Signo de caballo en Lengua de Signos Española (LSE): ilustración del animal y secuencia del signo.",
+      "source": {
+        "provider": "Fundación CNSE · Mis primeros signos",
+        "page": "https://www.fundacioncnse.org/educa/bancolse/animales-caballo.php",
+        "author": "Fundación CNSE",
+        "license": "CC BY-NC-SA 3.0",
+        "downloadUrl": "https://www.fundacioncnse.org/educa/bancolse/naturaleza/animales/descargas/caballo2-sinlogo.png"
       }
     }
   },
@@ -135,6 +168,17 @@
         "repeat": 3,
         "gap": 0.9
       }
+    },
+    "sign": {
+      "image": "/alaia/animales/signos/cerdo.jpg",
+      "alt": "Signo de cerdo en Lengua de Signos Española (LSE): ilustración del animal y secuencia del signo.",
+      "source": {
+        "provider": "Fundación CNSE · Mis primeros signos",
+        "page": "https://www.fundacioncnse.org/educa/bancolse/animales-cerdo.php",
+        "author": "Fundación CNSE",
+        "license": "CC BY-NC-SA 3.0",
+        "downloadUrl": "https://www.fundacioncnse.org/educa/bancolse/naturaleza/animales/descargas/cerdo2-sinlogo.png"
+      }
     }
   },
   {
@@ -168,6 +212,17 @@
         "start": 0,
         "duration": 6,
         "trimSilence": true
+      }
+    },
+    "sign": {
+      "image": "/alaia/animales/signos/gallo.jpg",
+      "alt": "Signo de gallo en Lengua de Signos Española (LSE): secuencia de fotografías con flechas de movimiento.",
+      "source": {
+        "provider": "DILSE · Fundación CNSE",
+        "page": "https://fundacioncnse-dilse.org/termino/gallo-9825",
+        "author": "Fundación CNSE",
+        "license": "Uso educativo no comercial",
+        "downloadUrl": "https://panel.fundacioncnse-dilse.org/storage/gallo.png"
       }
     }
   },
@@ -203,6 +258,17 @@
         "duration": 6,
         "trimSilence": true
       }
+    },
+    "sign": {
+      "image": "/alaia/animales/signos/pato.jpg",
+      "alt": "Signo de pato en Lengua de Signos Española (LSE): ilustración del animal y secuencia del signo.",
+      "source": {
+        "provider": "Fundación CNSE · Mis primeros signos",
+        "page": "https://www.fundacioncnse.org/educa/bancolse/animales-pato.php",
+        "author": "Fundación CNSE",
+        "license": "CC BY-NC-SA 3.0",
+        "downloadUrl": "https://www.fundacioncnse.org/educa/bancolse/naturaleza/animales/descargas/pato2-sinlogo.png"
+      }
     }
   },
   {
@@ -236,6 +302,17 @@
         "start": 0,
         "duration": 6,
         "trimSilence": true
+      }
+    },
+    "sign": {
+      "image": "/alaia/animales/signos/perro.jpg",
+      "alt": "Signo de perro en Lengua de Signos Española (LSE): ilustración del animal y secuencia del signo.",
+      "source": {
+        "provider": "Fundación CNSE · Mis primeros signos",
+        "page": "https://www.fundacioncnse.org/educa/bancolse/animales-perro.php",
+        "author": "Fundación CNSE",
+        "license": "CC BY-NC-SA 3.0",
+        "downloadUrl": "https://www.fundacioncnse.org/educa/bancolse/naturaleza/animales/descargas/perro2-sinlogo.png"
       }
     }
   },
@@ -271,6 +348,17 @@
         "duration": 6,
         "trimSilence": true
       }
+    },
+    "sign": {
+      "image": "/alaia/animales/signos/gato.jpg",
+      "alt": "Signo de gato en Lengua de Signos Española (LSE): ilustración del animal y secuencia del signo.",
+      "source": {
+        "provider": "Fundación CNSE · Mis primeros signos",
+        "page": "https://www.fundacioncnse.org/educa/bancolse/animales-gato.php",
+        "author": "Fundación CNSE",
+        "license": "CC BY-NC-SA 3.0",
+        "downloadUrl": "https://www.fundacioncnse.org/educa/bancolse/naturaleza/animales/descargas/gato2-sinlogo.png"
+      }
     }
   },
   {
@@ -304,6 +392,17 @@
         "start": 0,
         "duration": 6,
         "trimSilence": true
+      }
+    },
+    "sign": {
+      "image": "/alaia/animales/signos/leon.jpg",
+      "alt": "Signo de león en Lengua de Signos Española (LSE): ilustración del animal y secuencia del signo.",
+      "source": {
+        "provider": "Fundación CNSE · Mis primeros signos",
+        "page": "https://www.fundacioncnse.org/educa/bancolse/animales-leon.php",
+        "author": "Fundación CNSE",
+        "license": "CC BY-NC-SA 3.0",
+        "downloadUrl": "https://www.fundacioncnse.org/educa/bancolse/naturaleza/animales/descargas/leon2-sinlogo.png"
       }
     }
   },
@@ -339,6 +438,17 @@
         "duration": 6,
         "trimSilence": true
       }
+    },
+    "sign": {
+      "image": "/alaia/animales/signos/elefante.jpg",
+      "alt": "Signo de elefante en Lengua de Signos Española (LSE): ilustración del animal y secuencia del signo.",
+      "source": {
+        "provider": "Fundación CNSE · Mis primeros signos",
+        "page": "https://www.fundacioncnse.org/educa/bancolse/animales-elefante.php",
+        "author": "Fundación CNSE",
+        "license": "CC BY-NC-SA 3.0",
+        "downloadUrl": "https://www.fundacioncnse.org/educa/bancolse/naturaleza/animales/descargas/elefante2-sinlogo.png"
+      }
     }
   },
   {
@@ -373,6 +483,17 @@
         "duration": 6,
         "trimSilence": true
       }
+    },
+    "sign": {
+      "image": "/alaia/animales/signos/mono.jpg",
+      "alt": "Signo de mono en Lengua de Signos Española (LSE): ilustración del animal y secuencia del signo.",
+      "source": {
+        "provider": "Fundación CNSE · Mis primeros signos",
+        "page": "https://www.fundacioncnse.org/educa/bancolse/animales-mono.php",
+        "author": "Fundación CNSE",
+        "license": "CC BY-NC-SA 3.0",
+        "downloadUrl": "https://www.fundacioncnse.org/educa/bancolse/naturaleza/animales/descargas/mono2-sinlogo.png"
+      }
     }
   },
   {
@@ -406,6 +527,467 @@
         "start": 0,
         "duration": 6,
         "trimSilence": true
+      }
+    },
+    "sign": {
+      "image": "/alaia/animales/signos/rana.jpg",
+      "alt": "Signo de rana en Lengua de Signos Española (LSE): secuencia de fotografías con flechas de movimiento.",
+      "source": {
+        "provider": "DILSE · Fundación CNSE",
+        "page": "https://fundacioncnse-dilse.org/termino/rana-3158",
+        "author": "Fundación CNSE",
+        "license": "Uso educativo no comercial",
+        "downloadUrl": "https://panel.fundacioncnse-dilse.org/storage/rana.png"
+      }
+    }
+  },
+  {
+    "id": "burro",
+    "name": "Burro",
+    "sound": "¡Iii-aa!",
+    "article": "el",
+    "category": "granja",
+    "accent": "#EDE3D2",
+    "video": "/alaia/animales/video/burro.mp4",
+    "poster": "/alaia/animales/poster/burro.jpg",
+    "audio": "/alaia/animales/audio/burro.mp3",
+    "sources": {
+      "video": {
+        "provider": "Pexels",
+        "page": "https://www.pexels.com/video/friendly-donkeys-enjoying-hay-in-farm-barn-39729475/",
+        "author": "Joolsmagools",
+        "license": "Pexels License",
+        "downloadId": "39729475",
+        "start": 0.3,
+        "duration": 5,
+        "crop": "center"
+      },
+      "audio": {
+        "provider": "Wikimedia Commons",
+        "title": "File:157763 felix-blume a-donkey-is-braying-in-his-enclosure-in-south-of-france.wav",
+        "page": "https://commons.wikimedia.org/wiki/File:157763_felix-blume_a-donkey-is-braying-in-his-enclosure-in-south-of-france.wav",
+        "author": "felix-blume",
+        "license": "CC0",
+        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/25/157763_felix-blume_a-donkey-is-braying-in-his-enclosure-in-south-of-france.wav/157763_felix-blume_a-donkey-is-braying-in-his-enclosure-in-south-of-france.wav.mp3",
+        "start": 2,
+        "duration": 6,
+        "trimSilence": true
+      }
+    },
+    "sign": {
+      "image": "/alaia/animales/signos/burro.jpg",
+      "alt": "Signo de burro en Lengua de Signos Española (LSE): ilustración del animal y secuencia del signo.",
+      "source": {
+        "provider": "Fundación CNSE · Mis primeros signos",
+        "page": "https://www.fundacioncnse.org/educa/bancolse/animales-burro.php",
+        "author": "Fundación CNSE",
+        "license": "CC BY-NC-SA 3.0",
+        "downloadUrl": "https://www.fundacioncnse.org/educa/bancolse/naturaleza/animales/descargas/burro2-sinlogo.png"
+      }
+    }
+  },
+  {
+    "id": "cabra",
+    "name": "Cabra",
+    "sound": "¡Meee!",
+    "article": "la",
+    "category": "granja",
+    "accent": "#E5F1D8",
+    "video": "/alaia/animales/video/cabra.mp4",
+    "poster": "/alaia/animales/poster/cabra.jpg",
+    "audio": "/alaia/animales/audio/cabra.mp3",
+    "sources": {
+      "video": {
+        "provider": "Pexels",
+        "page": "https://www.pexels.com/video/a-goat-with-brown-and-white-spots-on-its-face-20523320/",
+        "author": "Ammad Rasool",
+        "license": "Pexels License",
+        "downloadId": "20523320",
+        "start": 0.3,
+        "duration": 5,
+        "crop": "center"
+      },
+      "audio": {
+        "provider": "Wikimedia Commons",
+        "title": "File:Herd of goats bleating.ogg",
+        "page": "https://commons.wikimedia.org/wiki/File:Herd_of_goats_bleating.ogg",
+        "author": "stephan",
+        "license": "Public domain",
+        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/transcoded/b/bc/Herd_of_goats_bleating.ogg/Herd_of_goats_bleating.ogg.mp3",
+        "start": 0,
+        "duration": 6,
+        "trimSilence": true
+      }
+    },
+    "sign": {
+      "image": "/alaia/animales/signos/cabra.jpg",
+      "alt": "Signo de cabra en Lengua de Signos Española (LSE): ilustración del animal y secuencia del signo.",
+      "source": {
+        "provider": "Fundación CNSE · Mis primeros signos",
+        "page": "https://www.fundacioncnse.org/educa/bancolse/animales-cabra.php",
+        "author": "Fundación CNSE",
+        "license": "CC BY-NC-SA 3.0",
+        "downloadUrl": "https://www.fundacioncnse.org/educa/bancolse/naturaleza/animales/descargas/cabra2-sinlogo.png"
+      }
+    }
+  },
+  {
+    "id": "gallina",
+    "name": "Gallina",
+    "sound": "¡Clo-clo-clo!",
+    "article": "la",
+    "category": "granja",
+    "accent": "#FFF6D8",
+    "video": "/alaia/animales/video/gallina.mp4",
+    "poster": "/alaia/animales/poster/gallina.jpg",
+    "audio": "/alaia/animales/audio/gallina.mp3",
+    "sources": {
+      "video": {
+        "provider": "Pexels",
+        "page": "https://www.pexels.com/video/close-up-of-chicken-in-rural-farm-setting-35108509/",
+        "author": "Papy Nounn",
+        "license": "Pexels License",
+        "downloadId": "35108509",
+        "start": 0.3,
+        "duration": 5,
+        "crop": "center"
+      },
+      "audio": {
+        "provider": "Wikimedia Commons",
+        "title": "File:Hen announcing shes lain an egg.ogg",
+        "page": "https://commons.wikimedia.org/wiki/File:Hen_announcing_shes_lain_an_egg.ogg",
+        "author": "alys",
+        "license": "Public domain",
+        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/44/Hen_announcing_shes_lain_an_egg.ogg/Hen_announcing_shes_lain_an_egg.ogg.mp3",
+        "start": 0,
+        "duration": 6,
+        "trimSilence": true
+      }
+    },
+    "sign": {
+      "image": "/alaia/animales/signos/gallina.jpg",
+      "alt": "Signo de gallina en Lengua de Signos Española (LSE): ilustración del animal y secuencia del signo.",
+      "source": {
+        "provider": "Fundación CNSE · Mis primeros signos",
+        "page": "https://www.fundacioncnse.org/educa/bancolse/animales-gallina.php",
+        "author": "Fundación CNSE",
+        "license": "CC BY-NC-SA 3.0",
+        "downloadUrl": "https://www.fundacioncnse.org/educa/bancolse/naturaleza/animales/descargas/gallina2-sinlogo.png"
+      }
+    }
+  },
+  {
+    "id": "pajaro",
+    "name": "Pájaro",
+    "sound": "¡Pío-pío!",
+    "article": "el",
+    "category": "mascotas",
+    "accent": "#E3F6F1",
+    "video": "/alaia/animales/video/pajaro.mp4",
+    "poster": "/alaia/animales/poster/pajaro.jpg",
+    "audio": "/alaia/animales/audio/pajaro.mp3",
+    "sources": {
+      "video": {
+        "provider": "Pexels",
+        "page": "https://www.pexels.com/video/a-small-bird-perched-on-a-branch-in-the-forest-27048931/",
+        "author": "Jean Paul Montanaro",
+        "license": "Pexels License",
+        "downloadId": "27048931",
+        "start": 0.3,
+        "duration": 5,
+        "crop": "center"
+      },
+      "audio": {
+        "provider": "Wikimedia Commons",
+        "title": "File:House Sparrows chirping.ogg",
+        "page": "https://commons.wikimedia.org/wiki/File:House_Sparrows_chirping.ogg",
+        "author": "QWerk",
+        "license": "CC BY-SA 3.0",
+        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/transcoded/0/00/House_Sparrows_chirping.ogg/House_Sparrows_chirping.ogg.mp3",
+        "start": 0,
+        "duration": 6,
+        "trimSilence": true
+      }
+    },
+    "sign": {
+      "image": "/alaia/animales/signos/pajaro.jpg",
+      "alt": "Signo de pájaro en Lengua de Signos Española (LSE): ilustración del animal y secuencia del signo.",
+      "source": {
+        "provider": "Fundación CNSE · Mis primeros signos",
+        "page": "https://www.fundacioncnse.org/educa/bancolse/animales-pajaro.php",
+        "author": "Fundación CNSE",
+        "license": "CC BY-NC-SA 3.0",
+        "downloadUrl": "https://www.fundacioncnse.org/educa/bancolse/naturaleza/animales/descargas/pajaro2-sinlogo.png"
+      }
+    }
+  },
+  {
+    "id": "loro",
+    "name": "Loro",
+    "sound": "¡Rrrraa!",
+    "article": "el",
+    "category": "mascotas",
+    "accent": "#E7F8D8",
+    "video": "/alaia/animales/video/loro.mp4",
+    "poster": "/alaia/animales/poster/loro.jpg",
+    "audio": "/alaia/animales/audio/loro.mp3",
+    "sources": {
+      "video": {
+        "provider": "Pexels",
+        "page": "https://www.pexels.com/video/close-up-video-of-a-parrot-7722579/",
+        "author": "Mikhail Nilov",
+        "license": "Pexels License",
+        "downloadId": "7722579",
+        "start": 0.3,
+        "duration": 5,
+        "crop": "center"
+      },
+      "audio": {
+        "provider": "Wikimedia Commons",
+        "title": "File:African grey parrot sound.wav",
+        "page": "https://commons.wikimedia.org/wiki/File:African_grey_parrot_sound.wav",
+        "author": "Ganesh Mohan T",
+        "license": "CC BY-SA 4.0",
+        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/2d/African_grey_parrot_sound.wav/African_grey_parrot_sound.wav.mp3",
+        "start": 0,
+        "duration": 6,
+        "trimSilence": true
+      }
+    },
+    "sign": {
+      "image": "/alaia/animales/signos/loro.jpg",
+      "alt": "Signo de loro en Lengua de Signos Española (LSE): ilustración del animal y secuencia del signo.",
+      "source": {
+        "provider": "Fundación CNSE · Mis primeros signos",
+        "page": "https://www.fundacioncnse.org/educa/bancolse/animales-loro.php",
+        "author": "Fundación CNSE",
+        "license": "CC BY-NC-SA 3.0",
+        "downloadUrl": "https://www.fundacioncnse.org/educa/bancolse/naturaleza/animales/descargas/loro2-sinlogo.png"
+      }
+    }
+  },
+  {
+    "id": "tigre",
+    "name": "Tigre",
+    "sound": "¡Grrrr!",
+    "article": "el",
+    "category": "salvaje",
+    "accent": "#FFE2C2",
+    "video": "/alaia/animales/video/tigre.mp4",
+    "poster": "/alaia/animales/poster/tigre.jpg",
+    "audio": "/alaia/animales/audio/tigre.mp3",
+    "sources": {
+      "video": {
+        "provider": "Pexels",
+        "page": "https://www.pexels.com/video/a-tiger-walking-7378625/",
+        "author": "Nicky Pe",
+        "license": "Pexels License",
+        "downloadId": "7378625",
+        "start": 0.3,
+        "duration": 5,
+        "crop": "center"
+      },
+      "audio": {
+        "provider": "Wikimedia Commons",
+        "title": "File:Tiger Mad.ogg",
+        "page": "https://commons.wikimedia.org/wiki/File:Tiger_Mad.ogg",
+        "author": "Bilberryerer",
+        "license": "CC BY-SA 4.0",
+        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/40/Tiger_Mad.ogg/Tiger_Mad.ogg.mp3",
+        "start": 0,
+        "duration": 6,
+        "trimSilence": true
+      }
+    },
+    "sign": {
+      "image": "/alaia/animales/signos/tigre.jpg",
+      "alt": "Signo de tigre en Lengua de Signos Española (LSE): ilustración del animal y secuencia del signo.",
+      "source": {
+        "provider": "Fundación CNSE · Mis primeros signos",
+        "page": "https://www.fundacioncnse.org/educa/bancolse/animales-tigre.php",
+        "author": "Fundación CNSE",
+        "license": "CC BY-NC-SA 3.0",
+        "downloadUrl": "https://www.fundacioncnse.org/educa/bancolse/naturaleza/animales/descargas/tigre2-sinlogo.png"
+      }
+    }
+  },
+  {
+    "id": "oso",
+    "name": "Oso",
+    "sound": "¡Grrrr!",
+    "article": "el",
+    "category": "salvaje",
+    "accent": "#EADFD4",
+    "video": "/alaia/animales/video/oso.mp4",
+    "poster": "/alaia/animales/poster/oso.jpg",
+    "audio": "/alaia/animales/audio/oso.mp3",
+    "sources": {
+      "video": {
+        "provider": "Pexels",
+        "page": "https://www.pexels.com/video/close-up-shot-of-a-wild-bear-7505572/",
+        "author": "Nicky Pe",
+        "license": "Pexels License",
+        "downloadId": "7505572",
+        "start": 0.3,
+        "duration": 5,
+        "crop": "center"
+      },
+      "audio": {
+        "provider": "Wikimedia Commons",
+        "title": "File:Bear growl.ogg",
+        "page": "https://commons.wikimedia.org/wiki/File:Bear_growl.ogg",
+        "author": "Shizhao",
+        "license": "CC BY 3.0",
+        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/4e/Bear_growl.ogg/Bear_growl.ogg.mp3",
+        "start": 0,
+        "duration": 6,
+        "trimSilence": true
+      }
+    },
+    "sign": {
+      "image": "/alaia/animales/signos/oso.jpg",
+      "alt": "Signo de oso en Lengua de Signos Española (LSE): ilustración del animal y secuencia del signo.",
+      "source": {
+        "provider": "Fundación CNSE · Mis primeros signos",
+        "page": "https://www.fundacioncnse.org/educa/bancolse/animales-oso.php",
+        "author": "Fundación CNSE",
+        "license": "CC BY-NC-SA 3.0",
+        "downloadUrl": "https://www.fundacioncnse.org/educa/bancolse/naturaleza/animales/descargas/oso2-sinlogo.png"
+      }
+    }
+  },
+  {
+    "id": "delfin",
+    "name": "Delfín",
+    "sound": "¡Iii-ii!",
+    "article": "el",
+    "category": "salvaje",
+    "accent": "#D9EEFF",
+    "video": "/alaia/animales/video/delfin.mp4",
+    "poster": "/alaia/animales/poster/delfin.jpg",
+    "audio": "/alaia/animales/audio/delfin.mp3",
+    "sources": {
+      "video": {
+        "provider": "Pexels",
+        "page": "https://www.pexels.com/video/video-of-dolphins-swimming-5743314/",
+        "author": "Daniel Torobekov",
+        "license": "Pexels License",
+        "downloadId": "5743314",
+        "start": 0.3,
+        "duration": 5,
+        "crop": "center"
+      },
+      "audio": {
+        "provider": "Wikimedia Commons",
+        "title": "File:161691 felixblume dolphin-screaming-underwater-in-caribbean-sea-mexico.wav",
+        "page": "https://commons.wikimedia.org/wiki/File:161691_felixblume_dolphin-screaming-underwater-in-caribbean-sea-mexico.wav",
+        "author": "Felix Blume",
+        "license": "CC0",
+        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/transcoded/5/5a/161691_felixblume_dolphin-screaming-underwater-in-caribbean-sea-mexico.wav/161691_felixblume_dolphin-screaming-underwater-in-caribbean-sea-mexico.wav.mp3",
+        "start": 2,
+        "duration": 6,
+        "trimSilence": true
+      }
+    },
+    "sign": {
+      "image": "/alaia/animales/signos/delfin.jpg",
+      "alt": "Signo de delfín en Lengua de Signos Española (LSE): ilustración del animal y secuencia del signo.",
+      "source": {
+        "provider": "Fundación CNSE · Mis primeros signos",
+        "page": "https://www.fundacioncnse.org/educa/bancolse/animales-delfin.php",
+        "author": "Fundación CNSE",
+        "license": "CC BY-NC-SA 3.0",
+        "downloadUrl": "https://www.fundacioncnse.org/educa/bancolse/naturaleza/animales/descargas/delfin2-sinlogo.png"
+      }
+    }
+  },
+  {
+    "id": "ballena",
+    "name": "Ballena",
+    "sound": "¡Fuuuu!",
+    "article": "la",
+    "category": "salvaje",
+    "accent": "#DDE4FF",
+    "video": "/alaia/animales/video/ballena.mp4",
+    "poster": "/alaia/animales/poster/ballena.jpg",
+    "audio": "/alaia/animales/audio/ballena.mp3",
+    "sources": {
+      "video": {
+        "provider": "Pexels",
+        "page": "https://www.pexels.com/video/beached-whale-5-19460366/",
+        "author": "Zane Holmes",
+        "license": "Pexels License",
+        "downloadId": "19460366",
+        "start": 0.3,
+        "duration": 4.5,
+        "crop": "center"
+      },
+      "audio": {
+        "provider": "Wikimedia Commons",
+        "title": "File:Humpbackwhale2.ogg",
+        "page": "https://commons.wikimedia.org/wiki/File:Humpbackwhale2.ogg",
+        "author": "Spyrogumas",
+        "license": "CC0",
+        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/13/Humpbackwhale2.ogg/Humpbackwhale2.ogg.mp3",
+        "start": 0,
+        "duration": 6,
+        "trimSilence": true
+      }
+    },
+    "sign": {
+      "image": "/alaia/animales/signos/ballena.jpg",
+      "alt": "Signo de ballena en Lengua de Signos Española (LSE): ilustración del animal y secuencia del signo.",
+      "source": {
+        "provider": "Fundación CNSE · Mis primeros signos",
+        "page": "https://www.fundacioncnse.org/educa/bancolse/animales-ballena.php",
+        "author": "Fundación CNSE",
+        "license": "CC BY-NC-SA 3.0",
+        "downloadUrl": "https://www.fundacioncnse.org/educa/bancolse/naturaleza/animales/descargas/ballena2-sinlogo.png"
+      }
+    }
+  },
+  {
+    "id": "abeja",
+    "name": "Abeja",
+    "sound": "¡Bzzzz!",
+    "article": "la",
+    "category": "salvaje",
+    "accent": "#FFF0B8",
+    "video": "/alaia/animales/video/abeja.mp4",
+    "poster": "/alaia/animales/poster/abeja.jpg",
+    "audio": "/alaia/animales/audio/abeja.mp3",
+    "sources": {
+      "video": {
+        "provider": "Pexels",
+        "page": "https://www.pexels.com/video/a-close-up-on-a-bee-on-a-flower-9737862/",
+        "author": "K",
+        "license": "Pexels License",
+        "downloadId": "9737862",
+        "start": 0.3,
+        "duration": 5,
+        "crop": "crop=2160:2160:0:0"
+      },
+      "audio": {
+        "provider": "Wikimedia Commons",
+        "title": "File:Bee buzzing sound (animal noises).opus",
+        "page": "https://commons.wikimedia.org/wiki/File:Bee_buzzing_sound_(animal_noises).opus",
+        "author": "Free Sounds Library",
+        "license": "CC BY 3.0",
+        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/transcoded/0/0f/Bee_buzzing_sound_%28animal_noises%29.opus/Bee_buzzing_sound_%28animal_noises%29.opus.mp3",
+        "start": 0,
+        "duration": 6,
+        "trimSilence": true
+      }
+    },
+    "sign": {
+      "image": "/alaia/animales/signos/abeja.jpg",
+      "alt": "Signo de abeja en Lengua de Signos Española (LSE): ilustración del animal y secuencia del signo.",
+      "source": {
+        "provider": "Fundación CNSE · Mis primeros signos",
+        "page": "https://www.fundacioncnse.org/educa/bancolse/animales-abeja.php",
+        "author": "Fundación CNSE",
+        "license": "CC BY-NC-SA 3.0",
+        "downloadUrl": "https://www.fundacioncnse.org/educa/bancolse/naturaleza/animales/descargas/abeja2-sinlogo.png"
       }
     }
   }

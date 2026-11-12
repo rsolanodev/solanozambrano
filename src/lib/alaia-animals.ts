@@ -26,6 +26,16 @@ export type AnimalAudioSource = BaseSource & {
   gap?: number;
 };
 
+export type AnimalSignSource = BaseSource & {
+  downloadUrl: string;
+};
+
+export type AnimalSign = {
+  image: string;
+  alt: string;
+  source: AnimalSignSource;
+};
+
 export type Animal = {
   id: string;
   name: string;
@@ -36,6 +46,7 @@ export type Animal = {
   video: string;
   poster: string;
   audio: string;
+  sign: AnimalSign;
   sources: {
     video: AnimalVideoSource;
     audio: AnimalAudioSource;

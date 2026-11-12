@@ -2,7 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { Animal } from "@/lib/alaia-animals";
-import { ChevronLeftIcon, ChevronRightIcon, CloseIcon, SpeakerIcon } from "../icons";
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  CloseIcon,
+  HandIcon,
+  SpeakerIcon,
+} from "../icons";
 import type { AudioState } from "./types";
 import { usePrefersReducedMotion } from "./usePrefersReducedMotion";
 
@@ -38,17 +44,37 @@ function SoundBars() {
 function AnimalMedia({
   animal,
   reducedMotion,
+  showSign,
   onReplay,
 }: {
   animal: Animal;
   reducedMotion: boolean;
+  showSign: boolean;
   onReplay: () => void;
 }) {
   const [videoFailed, setVideoFailed] = useState(false);
 
   return (
-    <div className="relative w-full max-w-[min(88vw,32rem)] overflow-hidden rounded-lg bg-surface shadow-[0_24px_60px_rgba(36,28,58,0.18)] landscape:w-[min(48vw,70vh)]">
-      {reducedMotion || videoFailed ? (
+    <div
+      className={`relative w-full max-w-[min(88vw,32rem)] overflow-hidden rounded-lg bg-surface shadow-[0_24px_60px_rgba(36,28,58,0.18)] ${
+        showSign ? "" : "landscape:w-[min(48vw,70vh)]"
+      }`}
+    >
+      {showSign ? (
+        <div className="flex w-full flex-col gap-xs bg-white p-sm">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={animal.sign.image}
+            alt={animal.sign.alt}
+            width={960}
+            height={480}
+            className="aspect-[2/1] w-full rounded-md object-contain"
+          />
+          <p className="text-center text-label-sm text-text-secondary">
+            Así se dice en LSE
+          </p>
+        </div>
+      ) : reducedMotion || videoFailed ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
           src={animal.poster}
@@ -94,6 +120,8 @@ export default function AnimalPlayer({
   const dialogRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const reducedMotion = usePrefersReducedMotion();
+  const [signAnimalId, setSignAnimalId] = useState<string | null>(null);
+  const showSign = signAnimalId === animal.id;
 
   useEffect(() => {
     closeButtonRef.current?.focus();
@@ -187,6 +215,7 @@ export default function AnimalPlayer({
             key={animal.id}
             animal={animal}
             reducedMotion={reducedMotion}
+            showSign={showSign}
             onReplay={onReplay}
           />
 
@@ -214,6 +243,23 @@ export default function AnimalPlayer({
                 No se pudo reproducir. Toca para escuchar.
               </p>
             ) : null}
+
+            <button
+              type="button"
+              onClick={() =>
+                setSignAnimalId(showSign ? null : animal.id)
+              }
+              aria-pressed={showSign}
+              aria-label={
+                showSign
+                  ? "Ver el animal"
+                  : "Ver signo en Lengua de Signos Española"
+              }
+              className="inline-flex min-h-11 items-center justify-center gap-xs rounded-full bg-primary-soft px-md py-sm text-label-sm text-primary transition hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            >
+              <HandIcon className="size-5" />
+              {showSign ? "Ver el animal" : "Ver signo LSE"}
+            </button>
 
             <div className="flex w-full items-center justify-center gap-sm sm:gap-md">
               <button

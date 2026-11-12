@@ -24,7 +24,8 @@ export default function AnimalCreditsPage() {
           <h1 className="text-headline-lg">Créditos</h1>
           <p className="mx-auto mt-sm max-w-[36rem] text-body-md text-text-secondary">
             Los videos son material de stock de Pexels. Los sonidos provienen de
-            Wikimedia Commons y conservan su licencia original.
+            Wikimedia Commons. Los signos provienen de la Fundación CNSE y
+            conservan su licencia original.
           </p>
         </header>
 
@@ -75,6 +76,26 @@ export default function AnimalCreditsPage() {
                       {" "}
                       · {animal.sources.audio.author} ·{" "}
                       {animal.sources.audio.license}
+                    </span>
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-label-sm uppercase text-text-secondary">
+                    Signo LSE
+                  </dt>
+                  <dd className="mt-xs text-text-secondary">
+                    <a
+                      href={animal.sign.source.page}
+                      {...externalLinkProps}
+                      aria-label={`Signo de ${animal.name} en ${animal.sign.source.provider} (abre en una pestaña nueva)`}
+                      className="text-primary underline underline-offset-4"
+                    >
+                      {animal.sign.source.provider} ↗
+                    </a>
+                    <span>
+                      {" "}
+                      · {animal.sign.source.author} ·{" "}
+                      {animal.sign.source.license}
                     </span>
                   </dd>
                 </div>

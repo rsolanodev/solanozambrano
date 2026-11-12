@@ -7,9 +7,9 @@ const assetPath = (url: string) =>
   path.join(process.cwd(), "public", url.replace(/^\//, ""));
 
 describe("alaiaAnimals", () => {
-  it("has 12 unique animals with complete display data", () => {
-    expect(alaiaAnimals).toHaveLength(12);
-    expect(new Set(alaiaAnimals.map((animal) => animal.id)).size).toBe(12);
+  it("has 22 unique animals with complete display data", () => {
+    expect(alaiaAnimals).toHaveLength(22);
+    expect(new Set(alaiaAnimals.map((animal) => animal.id)).size).toBe(22);
 
     for (const animal of alaiaAnimals) {
       expect(animal.id).toMatch(/^[a-z]+$/);
@@ -21,7 +21,7 @@ describe("alaiaAnimals", () => {
     }
   });
 
-  it("has complete source credits for video and audio", () => {
+  it("has complete source credits for video, audio and signs", () => {
     for (const animal of alaiaAnimals) {
       const { video, audio } = animal.sources;
 
@@ -40,6 +40,14 @@ describe("alaiaAnimals", () => {
       expect(audio.license.length).toBeGreaterThan(0);
       expect(audio.downloadUrl).toMatch(/^https:\/\//);
       expect(audio.duration).toBeGreaterThan(0);
+
+      expect(animal.sign.image).toBe(`/alaia/animales/signos/${animal.id}.jpg`);
+      expect(animal.sign.alt).toContain("Lengua de Signos Española");
+      expect(animal.sign.source.provider.length).toBeGreaterThan(0);
+      expect(animal.sign.source.page).toMatch(/^https:\/\//);
+      expect(animal.sign.source.author.length).toBeGreaterThan(0);
+      expect(animal.sign.source.license.length).toBeGreaterThan(0);
+      expect(animal.sign.source.downloadUrl).toMatch(/^https:\/\//);
     }
   });
 
@@ -48,11 +56,13 @@ describe("alaiaAnimals", () => {
       expect(animal.video.startsWith("/alaia/animales/video/")).toBe(true);
       expect(animal.poster.startsWith("/alaia/animales/poster/")).toBe(true);
       expect(animal.audio.startsWith("/alaia/animales/audio/")).toBe(true);
+      expect(animal.sign.image.startsWith("/alaia/animales/signos/")).toBe(true);
 
       const checks = [
         [animal.video, ".mp4", 2_000_000],
         [animal.poster, ".jpg", 300_000],
         [animal.audio, ".mp3", 500_000],
+        [animal.sign.image, ".jpg", 250_000],
       ] as const;
 
       for (const [url, extension, maxBytes] of checks) {
@@ -68,6 +78,7 @@ describe("alaiaAnimals", () => {
 
   it("finds animals by id", () => {
     expect(getAlaiaAnimal("vaca")?.name).toBe("Vaca");
+    expect(getAlaiaAnimal("abeja")?.name).toBe("Abeja");
     expect(getAlaiaAnimal("no-existe")).toBeUndefined();
   });
 });

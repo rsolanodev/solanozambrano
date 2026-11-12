@@ -9,7 +9,7 @@ describe("AlaiaLauncherPage", () => {
     expect(
       screen.getByRole("heading", { name: "Mundo de Alaia" })
     ).toBeDefined();
-    expect(screen.getByText("12 animales")).toBeDefined();
+    expect(screen.getByText("22 animales")).toBeDefined();
   });
 
   it("links Animales to its app route", () => {
