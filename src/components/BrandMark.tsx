@@ -7,9 +7,9 @@ export function BrandMark() {
     <Link
       href="/"
       className={classes.brand}
-      aria-label="Materna, ir al inicio"
+      aria-label="SolanoZambrano, ir al inicio"
     >
-      <span className={classes.word}>materna</span>
+      <span className={classes.word}>SolanoZambrano</span>
       <SquiggleDoodle className={classes.curve} />
     </Link>
   );

@@ -1,4 +1,4 @@
-# Materna · Sistema de Diseño Crayon
+# SolanoZambrano · Sistema de Diseño Crayon
 
 Guía visual única para **todo el repositorio**. Sustituye los temas por perfil:
 todas las pantallas comparten paleta, tipografía, formas, componentes y reglas de
@@ -151,8 +151,9 @@ Dos familias, disponibles vía `next/font`:
 
 ### Wordmark
 
-- Texto `materna` en Averia Libre 700, minúsculas, tracking `-0.05em`.
-- Trazo ondulado coral debajo. Área táctil mínima de 44 px.
+- Texto `SolanoZambrano` en Averia Libre 700, con la S y la Z en mayúscula,
+  tracking `-0.05em`.
+- Trazo ondulado coral debajo, del ancho del wordmark. Área táctil mínima de 44 px.
 - Solo en la pantalla de inicio y, si hace falta, como enlace de retorno.
 
 ### Back button
@@ -188,8 +189,9 @@ Dos familias, disponibles vía `next/font`:
 
 ### Perfil familiar
 
-- Avatar blob de 92-128 px con color de la paleta (sol, cielo, coral, verde).
-- Letra inicial en Averia 700, color `ink` (contraste seguro en los cuatro tonos).
+- Avatar blob de 92-128 px con color de la paleta (sol, cielo, coral, ciruela,
+  verde).
+- Letra inicial en Averia 700, color `ink` (contraste seguro en los cinco tonos).
 - Nombre en Averia 25-29 px; rol en label uppercase.
 - Perfil activo: pill `Entrar` coral. Perfil pendiente: borde discontinuo,
   saturación reducida y badge `Muy pronto` sol.
@@ -309,7 +311,7 @@ Dos familias, disponibles vía `next/font`:
 
 | Ruta | Pantalla | Patrón |
 | --- | --- | --- |
-| `/` | Selector familiar | Wordmark + hero + 4 tarjetas de perfil |
+| `/` | Selector familiar | Wordmark + hero + 5 tarjetas de perfil |
 | `/alaia` | Launcher de Alaia | Back + hero + app tile grande |
 | `/alaia/animales` | Cuadrícula de animales | Back + hero + grid 2/3/4 |
 | `/alaia/animales/creditos` | Créditos | Back + hero + grid de fuentes |

@@ -17,8 +17,8 @@
 }
 
 .curve {
-  width: 92px;
-  height: 18px;
+  width: 100%;
+  height: 16px;
   margin-top: -2px;
   margin-left: 2px;
   color: var(--color-coral);
@@ -37,6 +37,6 @@
   }
 
   .curve {
-    width: 104px;
+    height: 18px;
   }
 }

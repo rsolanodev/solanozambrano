@@ -23,6 +23,7 @@ export function SquiggleDoodle({ className, style }: DoodleProps) {
       style={style}
       aria-hidden="true"
       focusable="false"
+      preserveAspectRatio="none"
     >
       <path
         d="M4 20c10-14 20-14 30 0s20 14 30 0 20-14 30 0 16 12 22 4"

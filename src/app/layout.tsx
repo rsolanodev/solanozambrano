@@ -6,7 +6,7 @@ import "@/styles/design-tokens.css";
 import { theme } from "@/theme";
 
 export const metadata: Metadata = {
-  title: "Materna - Calendario de Tensión",
+  title: "SolanoZambrano - Calendario de Tensión",
   description:
     "Registra y visualiza tu tensión arterial y medicación diaria durante el embarazo.",
 };

@@ -137,7 +137,7 @@ export default function ProfileSelectionPage() {
         </Stack>
 
         <SimpleGrid
-          cols={{ base: 2, sm: 4 }}
+          cols={{ base: 2, sm: 3, lg: 5 }}
           spacing={{ base: "md", sm: "lg" }}
           className={classes.grid}
         >

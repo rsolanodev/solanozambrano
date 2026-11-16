@@ -7,15 +7,25 @@ describe("ProfileSelectionPage", () => {
   it("renders every family profile", () => {
     render(<ProfileSelectionPage />);
 
-    for (const name of ["Hogar", "Rubén", "Alaia", "Coco"]) {
+    for (const name of ["Albany", "Rubén", "Alaia", "Lucía", "Coco"]) {
       expect(screen.getByText(name)).toBeDefined();
     }
   });
 
-  it("does not render the removed Albany profile", () => {
+  it("does not render the removed Hogar profile", () => {
     render(<ProfileSelectionPage />);
 
-    expect(screen.queryByText("Albany")).toBeNull();
+    expect(screen.queryByText("Hogar")).toBeNull();
+  });
+
+  it("places Lucía right after Alaia", () => {
+    render(<ProfileSelectionPage />);
+
+    const names = screen
+      .getAllByText(/^(Albany|Rubén|Alaia|Lucía|Coco)$/)
+      .map((name) => name.textContent);
+
+    expect(names).toEqual(["Albany", "Rubén", "Alaia", "Lucía", "Coco"]);
   });
 
   it("links Alaia to her scoped app", () => {
@@ -28,7 +38,12 @@ describe("ProfileSelectionPage", () => {
   it("keeps pending profiles disabled", () => {
     render(<ProfileSelectionPage />);
 
-    for (const name of [/hogar pendiente/i, /rubén pendiente/i, /coco pendiente/i]) {
+    for (const name of [
+      /albany pendiente/i,
+      /rubén pendiente/i,
+      /lucía pendiente/i,
+      /coco pendiente/i,
+    ]) {
       expect((screen.getByRole("button", { name }) as HTMLButtonElement).disabled).toBe(true);
     }
   });

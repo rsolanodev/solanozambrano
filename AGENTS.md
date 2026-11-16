@@ -1,10 +1,10 @@
-# Materna - Tensiometro Calendar (Guía de Desarrollo)
+# SolanoZambrano - Tensiometro Calendar (Guía de Desarrollo)
 
-Este documento sirve como guía de referencia y especificaciones para el desarrollo de la aplicación **Materna - Tensiometro Calendar**.
+Este documento sirve como guía de referencia y especificaciones para el desarrollo de la aplicación **SolanoZambrano - Tensiometro Calendar**.
 
 ## Descripción del Proyecto
 
-**Materna** es una aplicación web diseñada para que una mujer embarazada pueda llevar un registro diario de:
+**SolanoZambrano** es una aplicación web diseñada para que una mujer embarazada pueda llevar un registro diario de:
 1. **Datos de tensión arterial** (presión sistólica, diastólica y pulso).
 2. **Control de medicación** (si ha tomado la pastilla de la tensión diaria).
 3. **Notas y síntomas diarios** (opcional, para añadir contexto emocional o de salud física).
