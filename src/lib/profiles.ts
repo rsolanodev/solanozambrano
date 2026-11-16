@@ -1,4 +1,4 @@
-export type ProfileSlug = "hogar" | "albany" | "ruben" | "alaia" | "coco";
+export type ProfileSlug = "hogar" | "ruben" | "alaia" | "coco";
 
 export type Profile = {
   slug: ProfileSlug;
@@ -22,17 +22,7 @@ export const profiles: Profile[] = [
     accentSoft: "#FFF1C8",
     icon: "H",
   },
-  {
-    slug: "albany",
-    name: "Albany",
-    initials: "AL",
-    href: "/albany",
-    theme: "albany",
-    designDoc: "DESIGN_ALBANY.md",
-    accent: "#FF8AA5",
-    accentSoft: "#FFE0E8",
-    icon: "A",
-  },
+
   {
     slug: "ruben",
     name: "Rubén",

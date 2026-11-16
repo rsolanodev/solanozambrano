@@ -6,16 +6,15 @@ describe("ProfileSelectionPage", () => {
   it("renders every family profile", () => {
     render(<ProfileSelectionPage />);
 
-    for (const name of ["Hogar", "Albany", "Rubén", "Alaia", "Coco"]) {
+    for (const name of ["Hogar", "Rubén", "Alaia", "Coco"]) {
       expect(screen.getByText(name)).toBeDefined();
     }
   });
 
-  it("links Albany to her scoped app", () => {
+  it("does not render the removed Albany profile", () => {
     render(<ProfileSelectionPage />);
 
-    const albany = screen.getByRole("link", { name: /entrar como albany/i });
-    expect(albany.getAttribute("href")).toBe("/albany");
+    expect(screen.queryByText("Albany")).toBeNull();
   });
 
   it("links Alaia to her scoped app", () => {

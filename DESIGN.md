@@ -9,8 +9,6 @@ ese perfil.
 | Perfil | Rutas | Documento de diseño | Tema Tailwind |
 | --- | --- | --- | --- |
 | Selector familiar | `/` | Este archivo | `family` |
-| Albany launcher | `/albany` | `DESIGN_ALBANY.md` | `albany` |
-| Albany - Tensiómetro | `/albany/tensiometro/**` | `DESIGN_ALBANY.md` | `albany` |
 | Alaia launcher | `/alaia` | `DESIGN_ALAIA.md` | `alaia` |
 | Alaia - Animales | `/alaia/animales/**` | `DESIGN_ALAIA.md` | `alaia` |
 | Hogar | Pendiente | Pendiente | Pendiente |
@@ -20,7 +18,7 @@ ese perfil.
 ## Contrato de Implementación
 
 - Antes de modificar UI de un perfil, leer su `DESIGN_<NOMBRE>.md`.
-- No reutilizar los tokens visuales de Albany para otro perfil sin crear antes
+- No reutilizar los tokens visuales de un perfil para otro sin crear antes
   su documento de diseño.
 - Las clases Tailwind deben seguir siendo semánticas (`bg-background`,
   `text-primary`, `card-surface`, `btn-primary`, etc.).
@@ -35,7 +33,6 @@ La pantalla raíz `/` solo selecciona perfil. Debe funcionar como una parrilla d
 perfiles clara y directa, con foco en los nombres de la familia:
 
 - Hogar
-- Albany
 - Rubén
 - Alaia
 - Coco
@@ -46,14 +43,6 @@ navegar a una ruta incompleta.
 El selector familiar usa un tono claro, colorido y moderno: fondo cálido,
 tarjetas de perfil blancas, avatares grandes con color propio por perfil y
 microestado “Próximamente” en los perfiles sin ruta activa.
-
-## Apps de Albany
-
-La ruta `/albany` es la puerta de entrada a las apps de Albany. Debe mostrar una
-parrilla de iconos centrada. Actualmente solo muestra `Tensiómetro`.
-
-La app `Tensiómetro` vive bajo `/albany/tensiometro/**` y mantiene la navegación
-interna de Diario, Calendario y Métricas.
 
 ## Apps de Alaia
 
