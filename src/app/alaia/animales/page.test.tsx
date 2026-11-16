@@ -1,6 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { fireEvent, render, screen, waitFor, within } from "@testing-library/react";
+import { fireEvent, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { render } from "@/lib/test-utils";
 import AnimalsPage from "@/app/alaia/animales/page";
 
 const playMock = vi.mocked(HTMLMediaElement.prototype.play);

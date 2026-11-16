@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+import { render } from "@/lib/test-utils";
 import AnimalCreditsPage from "@/app/alaia/animales/creditos/page";
 
 const animalNames = [

@@ -1,109 +1,189 @@
-import Link from "next/link";
+"use client";
+
+import type { CSSProperties } from "react";
+import {
+  Anchor,
+  Badge,
+  Box,
+  Card,
+  Container,
+  SimpleGrid,
+  Text,
+  Title,
+} from "@mantine/core";
 import { alaiaAnimals } from "@/lib/alaia-animals";
-import { ChevronLeftIcon } from "../../icons";
+import { BackButton } from "@/components/BackButton";
+import { Marker } from "@/components/Marker";
+import { PageDoodles } from "@/components/PageDoodles";
+import classes from "./credits.module.css";
 
 const externalLinkProps = {
   target: "_blank",
   rel: "noreferrer",
 } as const;
 
+const tones = [
+  "var(--color-coral)",
+  "var(--color-sun)",
+  "var(--color-grass)",
+  "var(--color-sky)",
+];
+
 export default function AnimalCreditsPage() {
   return (
-    <main className="min-h-dvh bg-background px-md pb-[calc(var(--spacing-xl)+env(safe-area-inset-bottom))] pt-[calc(var(--spacing-md)+env(safe-area-inset-top))] sm:px-lg">
-      <div className="mx-auto w-full max-w-3xl">
-        <Link
-          href="/alaia/animales"
-          aria-label="Volver a Animales"
-          className="flex size-11 items-center justify-center rounded-full bg-surface text-text-secondary shadow-sm transition hover:bg-surface-variant hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-        >
-          <ChevronLeftIcon />
-        </Link>
+    <Box component="main" className={classes.main}>
+      <PageDoodles variant="credits" />
 
-        <header className="mt-lg text-center">
-          <p className="text-label-sm uppercase text-primary">Animales</p>
-          <h1 className="text-headline-lg">Créditos</h1>
-          <p className="mx-auto mt-sm max-w-[36rem] text-body-md text-text-secondary">
+      <Container size={1080} className={classes.shell}>
+        <Box component="header" className={classes.topbar}>
+          <BackButton href="/alaia/animales" label="Volver a Animales">
+            Animales
+          </BackButton>
+          <Badge color="sky" variant="light" size="md" className={classes.context}>
+            Fuentes y licencias
+          </Badge>
+        </Box>
+
+        <Box className={classes.hero}>
+          <Text className="text-label" c="var(--color-coral-strong)">
+            Mundo de Alaia
+          </Text>
+          <Title order={1} className={classes.title}>
+            <Marker>Créditos</Marker>
+          </Title>
+          <Text component="p" className={classes.lead}>
             Los videos son material de stock de Pexels. Los sonidos provienen de
             Wikimedia Commons. Los signos provienen de la Fundación CNSE y
             conservan su licencia original.
-          </p>
-        </header>
+          </Text>
+        </Box>
 
-        <div className="mt-xl flex flex-col gap-md">
-          {alaiaAnimals.map((animal) => (
-            <section
+        <SimpleGrid
+          cols={{ base: 1, md: 2 }}
+          spacing="lg"
+          className={classes.grid}
+        >
+          {alaiaAnimals.map((animal, index) => (
+            <Card
               key={animal.id}
-              className="rounded-lg border border-border-subtle bg-surface p-md"
+              padding="md"
+              radius="lg"
+              className={classes.card}
+              style={
+                {
+                  "--card-tone": tones[index % tones.length],
+                } as CSSProperties
+              }
             >
-              <h2 className="text-headline-sm text-text-primary">
+              <Title order={2} size="h4" className={classes.animalName}>
                 {animal.name}
-              </h2>
-              <dl className="mt-sm flex flex-col gap-sm text-body-sm">
-                <div>
-                  <dt className="text-label-sm uppercase text-text-secondary">
+              </Title>
+
+              <Box component="dl" className={classes.definitions}>
+                <Box className={classes.definitionGroup}>
+                  <Badge
+                    component="dt"
+                    color="coral"
+                    variant="light"
+                    size="sm"
+                    className={classes.term}
+                  >
                     Video
-                  </dt>
-                  <dd className="mt-xs text-text-secondary">
-                    <a
+                  </Badge>
+                  <Text
+                    component="dd"
+                    size="sm"
+                    c="dimmed"
+                    className={classes.definition}
+                  >
+                    <Anchor
                       href={animal.sources.video.page}
                       {...externalLinkProps}
                       aria-label={`Video de ${animal.name} en ${animal.sources.video.provider} (abre en una pestaña nueva)`}
-                      className="text-primary underline underline-offset-4"
+                      underline="always"
                     >
                       {animal.sources.video.provider} ↗
-                    </a>
+                    </Anchor>
                     <span>
                       {" "}
                       · {animal.sources.video.author} ·{" "}
                       {animal.sources.video.license}
                     </span>
-                  </dd>
-                </div>
-                <div>
-                  <dt className="text-label-sm uppercase text-text-secondary">
+                  </Text>
+                </Box>
+
+                <Box className={classes.definitionGroup}>
+                  <Badge
+                    component="dt"
+                    color="grass"
+                    variant="light"
+                    size="sm"
+                    className={classes.term}
+                  >
                     Audio
-                  </dt>
-                  <dd className="mt-xs text-text-secondary">
-                    <a
+                  </Badge>
+                  <Text
+                    component="dd"
+                    size="sm"
+                    c="dimmed"
+                    className={classes.definition}
+                  >
+                    <Anchor
                       href={animal.sources.audio.page}
                       {...externalLinkProps}
                       aria-label={`Audio de ${animal.name} en Wikimedia Commons (abre en una pestaña nueva)`}
-                      className="text-primary underline underline-offset-4"
+                      underline="always"
                     >
                       {animal.sources.audio.title.replace(/^File:/, "")} ↗
-                    </a>
+                    </Anchor>
                     <span>
                       {" "}
                       · {animal.sources.audio.author} ·{" "}
                       {animal.sources.audio.license}
                     </span>
-                  </dd>
-                </div>
-                <div>
-                  <dt className="text-label-sm uppercase text-text-secondary">
+                  </Text>
+                </Box>
+
+                <Box className={classes.definitionGroup}>
+                  <Badge
+                    component="dt"
+                    color="sky"
+                    variant="light"
+                    size="sm"
+                    className={classes.term}
+                  >
                     Signo LSE
-                  </dt>
-                  <dd className="mt-xs text-text-secondary">
-                    <a
+                  </Badge>
+                  <Text
+                    component="dd"
+                    size="sm"
+                    c="dimmed"
+                    className={classes.definition}
+                  >
+                    <Anchor
                       href={animal.sign.source.page}
                       {...externalLinkProps}
                       aria-label={`Signo de ${animal.name} en ${animal.sign.source.provider} (abre en una pestaña nueva)`}
-                      className="text-primary underline underline-offset-4"
+                      underline="always"
                     >
                       {animal.sign.source.provider} ↗
-                    </a>
+                    </Anchor>
                     <span>
                       {" "}
                       · {animal.sign.source.author} ·{" "}
                       {animal.sign.source.license}
                     </span>
-                  </dd>
-                </div>
-              </dl>
-            </section>
+                  </Text>
+                </Box>
+              </Box>
+            </Card>
           ))}
-        </div>
-      </div>
-    </main>
+        </SimpleGrid>
+
+        <Text component="p" className={classes.footer}>
+          Gracias a las personas y proyectos que comparten estos materiales.
+        </Text>
+      </Container>
+    </Box>
   );
 }

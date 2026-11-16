@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Box } from "@mantine/core";
+import classes from "./layout.module.css";
 
 export const metadata: Metadata = {
   title: "Mundo de Alaia",
@@ -11,11 +13,8 @@ export default function AlaiaLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div
-      data-profile-theme="alaia"
-      className="min-h-dvh bg-background text-text-primary"
-    >
+    <Box data-app-shell="alaia" className={classes.root}>
       {children}
-    </div>
+    </Box>
   );
 }

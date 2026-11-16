@@ -1,6 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import {
+  ActionIcon,
+  Box,
+  Button,
+  Image,
+  Text,
+  Title,
+  UnstyledButton,
+} from "@mantine/core";
 import type { Animal } from "@/lib/alaia-animals";
 import {
   ChevronLeftIcon,
@@ -9,8 +18,11 @@ import {
   HandIcon,
   SpeakerIcon,
 } from "../icons";
+import { LoopDoodle, SunDoodle } from "@/components/CrayonDoodles";
+import { Marker } from "@/components/Marker";
 import type { AudioState } from "./types";
 import { usePrefersReducedMotion } from "./usePrefersReducedMotion";
+import classes from "./AnimalPlayer.module.css";
 
 type AnimalPlayerProps = {
   animal: Animal;
@@ -29,15 +41,16 @@ function articleLabel(animal: Animal): string {
 
 function SoundBars() {
   return (
-    <span className="flex h-6 items-end gap-1" aria-hidden="true">
+    <Box component="span" className={classes.soundBars} aria-hidden="true">
       {[0, 1, 2, 3].map((bar) => (
-        <span
+        <Box
+          component="span"
           key={bar}
-          className="alaia-sound-bar h-6 w-1.5 rounded-full bg-primary"
+          className={`alaia-sound-bar ${classes.soundBar}`}
           style={{ animationDelay: `${bar * 110}ms` }}
         />
       ))}
-    </span>
+    </Box>
   );
 }
 
@@ -55,55 +68,57 @@ function AnimalMedia({
   const [videoFailed, setVideoFailed] = useState(false);
 
   return (
-    <div
-      className={`relative w-full max-w-[min(88vw,32rem)] overflow-hidden rounded-lg bg-surface shadow-[0_24px_60px_rgba(36,28,58,0.18)] ${
-        showSign ? "" : "landscape:w-[min(48vw,70vh)]"
-      }`}
-    >
-      {showSign ? (
-        <div className="flex w-full flex-col gap-xs bg-white p-sm">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={animal.sign.image}
-            alt={animal.sign.alt}
-            width={960}
-            height={480}
-            className="aspect-[2/1] w-full rounded-md object-contain"
+    <Box className={`${classes.media} ${showSign ? "" : classes.mediaWide}`}>
+      <Box className={classes.mediaInner}>
+        {showSign ? (
+          <Box className={classes.signCard}>
+            <Image
+              src={animal.sign.image}
+              alt={animal.sign.alt}
+              width={960}
+              height={480}
+              fit="contain"
+              className={classes.signImage}
+            />
+            <Text
+              size="xs"
+              c="dimmed"
+              ta="center"
+              className={classes.signCaption}
+            >
+              Así se dice en LSE
+            </Text>
+          </Box>
+        ) : reducedMotion || videoFailed ? (
+          <Image
+            src={animal.poster}
+            alt={`${animal.name} en su hábitat`}
+            width={720}
+            height={720}
+            fit="cover"
+            className={classes.poster}
           />
-          <p className="text-center text-label-sm text-text-secondary">
-            Así se dice en LSE
-          </p>
-        </div>
-      ) : reducedMotion || videoFailed ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={animal.poster}
-          alt={`${animal.name} en su hábitat`}
-          width={720}
-          height={720}
-          className="aspect-square size-full object-cover"
+        ) : (
+          <video
+            src={animal.video}
+            poster={animal.poster}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            onError={() => setVideoFailed(true)}
+            aria-hidden="true"
+            className={classes.video}
+          />
+        )}
+        <UnstyledButton
+          onClick={onReplay}
+          aria-label={`Repetir sonido de ${articleLabel(animal)} ${animal.name}`}
+          className={classes.overlay}
         />
-      ) : (
-        <video
-          src={animal.video}
-          poster={animal.poster}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          onError={() => setVideoFailed(true)}
-          aria-hidden="true"
-          className="aspect-square size-full object-cover"
-        />
-      )}
-      <button
-        type="button"
-        onClick={onReplay}
-        aria-label={`Repetir sonido de ${articleLabel(animal)} ${animal.name}`}
-        className="absolute inset-0 rounded-lg focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/40"
-      />
-    </div>
+      </Box>
+    </Box>
   );
 }
 
@@ -183,34 +198,44 @@ export default function AnimalPlayer({
   }, [onClose, onNext, onPrevious, onReplay]);
 
   return (
-    <div
+    <Box
       ref={dialogRef}
       role="dialog"
       aria-modal="true"
       aria-labelledby="animal-player-title"
       aria-describedby="animal-player-sound"
-      className="alaia-player-enter fixed inset-0 z-50 overflow-y-auto bg-background px-md pb-[calc(var(--spacing-lg)+env(safe-area-inset-bottom))] pt-[calc(var(--spacing-md)+env(safe-area-inset-top))] text-text-primary sm:px-lg"
+      className={`alaia-player-enter ${classes.dialog}`}
     >
-      <div className="mx-auto flex min-h-full w-full max-w-4xl flex-col">
-        <header className="flex items-center justify-between gap-md">
-          <button
+      <Box className={classes.doodleTop} aria-hidden="true">
+        <SunDoodle />
+      </Box>
+      <Box className={classes.doodleBottom} aria-hidden="true">
+        <LoopDoodle />
+      </Box>
+
+      <Box className={classes.inner}>
+        <Box className={classes.header}>
+          <ActionIcon
             ref={closeButtonRef}
             type="button"
             onClick={onClose}
             aria-label="Cerrar reproductor"
-            className="flex size-12 shrink-0 items-center justify-center rounded-full bg-surface text-text-primary shadow-sm transition hover:bg-surface-variant focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            size={48}
+            className={classes.close}
           >
-            <CloseIcon className="size-6" />
-          </button>
-          <p
+            <CloseIcon size={22} />
+          </ActionIcon>
+
+          <Text
+            component="p"
             aria-live="polite"
-            className="rounded-full bg-surface px-md py-xs text-label-sm tabular-nums text-text-secondary"
+            className={classes.counter}
           >
             {index + 1} de {total}
-          </p>
-        </header>
+          </Text>
+        </Box>
 
-        <div className="flex flex-1 flex-col items-center justify-center gap-lg py-md landscape:flex-row landscape:gap-xl">
+        <Box className={classes.body}>
           <AnimalMedia
             key={animal.id}
             animal={animal}
@@ -219,81 +244,92 @@ export default function AnimalPlayer({
             onReplay={onReplay}
           />
 
-          <div className="flex w-full max-w-[28rem] flex-col items-center gap-md text-center">
-            <div>
-              <h2
+          <Box className={classes.details}>
+            <Box>
+              <Title
                 id="animal-player-title"
-                className="text-display text-text-primary"
+                order={2}
+                className={classes.display}
               >
                 {animal.name}
-              </h2>
-              <div className="mt-xs flex min-h-8 items-center justify-center gap-sm">
-                <p
+              </Title>
+              <Box className={classes.soundRow}>
+                <Text
                   id="animal-player-sound"
-                  className="text-headline-md text-primary"
+                  component="p"
+                  className={classes.sound}
                 >
-                  {animal.sound}
-                </p>
+                  <Marker>{animal.sound}</Marker>
+                </Text>
                 {audioState === "playing" ? <SoundBars /> : null}
-              </div>
-            </div>
+              </Box>
+            </Box>
 
             {audioState === "error" ? (
-              <p className="text-body-sm text-text-secondary">
+              <Text size="sm" c="dimmed" ta="center" className={classes.error}>
                 No se pudo reproducir. Toca para escuchar.
-              </p>
+              </Text>
             ) : null}
 
-            <button
+            <Button
               type="button"
-              onClick={() =>
-                setSignAnimalId(showSign ? null : animal.id)
-              }
+              onClick={() => setSignAnimalId(showSign ? null : animal.id)}
               aria-pressed={showSign}
               aria-label={
                 showSign
                   ? "Ver el animal"
                   : "Ver signo en Lengua de Signos Española"
               }
-              className="inline-flex min-h-11 items-center justify-center gap-xs rounded-full bg-primary-soft px-md py-sm text-label-sm text-primary transition hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              variant="light"
+              color="sky"
+              size="sm"
+              leftSection={<HandIcon size={20} />}
+              className={classes.signToggle}
+              styles={{
+                label: {
+                  fontSize: 12,
+                  fontWeight: 700,
+                  lineHeight: "16px",
+                },
+              }}
             >
-              <HandIcon className="size-5" />
               {showSign ? "Ver el animal" : "Ver signo LSE"}
-            </button>
+            </Button>
 
-            <div className="flex w-full items-center justify-center gap-sm sm:gap-md">
-              <button
+            <Box className={classes.nav}>
+              <ActionIcon
                 type="button"
                 onClick={onPrevious}
                 aria-label="Animal anterior"
-                className="flex size-14 shrink-0 items-center justify-center rounded-full bg-surface text-text-primary shadow-[0_10px_24px_rgba(36,28,58,0.12)] transition hover:bg-surface-variant focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                size={56}
+                className={classes.arrow}
               >
-                <ChevronLeftIcon className="size-6" />
-              </button>
+                <ChevronLeftIcon size={24} />
+              </ActionIcon>
 
-              <button
+              <Button
                 type="button"
                 onClick={onReplay}
-                className="btn-primary h-16 min-w-0 flex-1 gap-sm px-md text-headline-sm"
+                leftSection={<SpeakerIcon size={24} />}
+                h={64}
+                className={classes.replay}
               >
-                <SpeakerIcon className="size-6" />
-                <span>
-                  {audioState === "error" ? "Toca para escuchar" : "Otra vez"}
-                </span>
-              </button>
+                {audioState === "error" ? "Toca para escuchar" : "Otra vez"}
+              </Button>
 
-              <button
+              <ActionIcon
                 type="button"
                 onClick={onNext}
                 aria-label="Animal siguiente"
-                className="flex size-14 shrink-0 items-center justify-center rounded-full bg-surface text-text-primary shadow-[0_10px_24px_rgba(36,28,58,0.12)] transition hover:bg-surface-variant focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                size={56}
+                className={classes.arrow}
               >
-                <ChevronRightIcon className="size-6" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+                <ChevronRightIcon size={24} />
+              </ActionIcon>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+    </Box>
   );
 }

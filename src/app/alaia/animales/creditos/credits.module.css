@@ -1,0 +1,132 @@
+.main {
+  position: relative;
+  min-height: 100dvh;
+  overflow: hidden;
+  padding: calc(22px + env(safe-area-inset-top)) 20px
+    calc(40px + env(safe-area-inset-bottom));
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+}
+
+.shell {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 4vw, 40px);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.context {
+  height: 34px;
+  padding-inline: 14px;
+  border: 2px solid color-mix(in srgb, var(--color-sky) 28%, var(--color-line));
+  background-color: var(--color-sky-soft);
+  color: var(--color-ink);
+  font-family: var(--font-text);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding-top: 4px;
+  text-align: center;
+}
+
+.title.title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 5.4rem);
+  font-weight: 400;
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+  color: var(--color-ink);
+}
+
+.lead {
+  max-width: 640px;
+  color: var(--color-ink-soft);
+  font-size: clamp(1rem, 1.6vw, 1.12rem);
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.grid {
+  width: 100%;
+  align-items: start;
+}
+
+.card.card {
+  border: 2px solid var(--color-line);
+  border-top: 8px solid var(--card-tone);
+  background-color: var(--color-paper);
+  box-shadow: var(--shadow-card);
+}
+
+.animalName.animalName {
+  margin: 0;
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.definitions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 14px 0 0;
+}
+
+.definitionGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.term.term {
+  width: fit-content;
+  height: 22px;
+  padding-inline: 9px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.definition {
+  margin: 2px 0 0;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: 8px;
+  text-align: center;
+  color: var(--color-ink-soft);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding-inline: 16px;
+  }
+
+  .context {
+    display: none;
+  }
+}

@@ -1,11 +1,14 @@
 type IconProps = {
   className?: string;
+  size?: number;
 };
 
-export function ChevronLeftIcon({ className = "size-5" }: IconProps) {
+export function ChevronLeftIcon({ className, size = 24 }: IconProps) {
   return (
     <svg
       viewBox="0 0 24 24"
+      width={size}
+      height={size}
       className={className}
       fill="none"
       stroke="currentColor"
@@ -19,10 +22,12 @@ export function ChevronLeftIcon({ className = "size-5" }: IconProps) {
   );
 }
 
-export function ChevronRightIcon({ className = "size-5" }: IconProps) {
+export function ChevronRightIcon({ className, size = 24 }: IconProps) {
   return (
     <svg
       viewBox="0 0 24 24"
+      width={size}
+      height={size}
       className={className}
       fill="none"
       stroke="currentColor"
@@ -36,10 +41,12 @@ export function ChevronRightIcon({ className = "size-5" }: IconProps) {
   );
 }
 
-export function CloseIcon({ className = "size-6" }: IconProps) {
+export function CloseIcon({ className, size = 24 }: IconProps) {
   return (
     <svg
       viewBox="0 0 24 24"
+      width={size}
+      height={size}
       className={className}
       fill="none"
       stroke="currentColor"
@@ -54,10 +61,12 @@ export function CloseIcon({ className = "size-6" }: IconProps) {
   );
 }
 
-export function HandIcon({ className = "size-6" }: IconProps) {
+export function HandIcon({ className, size = 24 }: IconProps) {
   return (
     <svg
       viewBox="0 0 24 24"
+      width={size}
+      height={size}
       className={className}
       fill="none"
       stroke="currentColor"
@@ -74,10 +83,12 @@ export function HandIcon({ className = "size-6" }: IconProps) {
   );
 }
 
-export function SpeakerIcon({ className = "size-6" }: IconProps) {
+export function SpeakerIcon({ className, size = 24 }: IconProps) {
   return (
     <svg
       viewBox="0 0 24 24"
+      width={size}
+      height={size}
       className={className}
       fill="none"
       stroke="currentColor"

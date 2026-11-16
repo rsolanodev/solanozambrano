@@ -5,8 +5,6 @@ export type Profile = {
   name: string;
   initials: string;
   href?: string;
-  theme: "family" | ProfileSlug;
-  designDoc?: string;
   accent: string;
   accentSoft: string;
   icon: string;
@@ -17,19 +15,16 @@ export const profiles: Profile[] = [
     slug: "hogar",
     name: "Hogar",
     initials: "HG",
-    theme: "family",
-    accent: "#FFB84D",
-    accentSoft: "#FFF1C8",
+    accent: "#FFCA24",
+    accentSoft: "#FFF1BF",
     icon: "H",
   },
-
   {
     slug: "ruben",
     name: "Rubén",
     initials: "RB",
-    theme: "ruben",
-    accent: "#4A90D9",
-    accentSoft: "#DDEEFF",
+    accent: "#4A8ACA",
+    accentSoft: "#E0EDF9",
     icon: "R",
   },
   {
@@ -37,18 +32,16 @@ export const profiles: Profile[] = [
     name: "Alaia",
     initials: "AI",
     href: "/alaia",
-    theme: "alaia",
-    accent: "#9F7AEA",
-    accentSoft: "#EEE7FF",
+    accent: "#FF5833",
+    accentSoft: "#FFE3DA",
     icon: "A",
   },
   {
     slug: "coco",
     name: "Coco",
     initials: "CO",
-    theme: "coco",
-    accent: "#5BC8A8",
-    accentSoft: "#DDF7EF",
+    accent: "#60AB59",
+    accentSoft: "#E2F2DF",
     icon: "C",
   },
 ];

@@ -1,91 +1,155 @@
+"use client";
+
+import type { CSSProperties } from "react";
 import Link from "next/link";
+import {
+  Badge,
+  Box,
+  Card,
+  Container,
+  SimpleGrid,
+  Stack,
+  Text,
+  Title,
+} from "@mantine/core";
+import { BrandMark } from "@/components/BrandMark";
+import { Marker } from "@/components/Marker";
+import { PageDoodles } from "@/components/PageDoodles";
+import { SparkleDoodle } from "@/components/CrayonDoodles";
 import { profiles, type Profile } from "@/lib/profiles";
+import { ChevronRightIcon } from "@/app/alaia/icons";
+import classes from "./profile-selection.module.css";
 
-function ProfileAvatar({ profile }: { profile: Profile }) {
-  return (
-    <span className="relative flex size-28 items-center justify-center rounded-full bg-surface shadow-[0_18px_42px_rgba(255,122,144,0.2)] transition-transform duration-200 group-hover:scale-105 group-focus-visible:scale-105 sm:size-32">
-      <span
-        className="absolute inset-2 rounded-full"
-        style={{ backgroundColor: profile.accentSoft }}
-        aria-hidden="true"
-      />
-      <span
-        className="relative flex size-20 items-center justify-center rounded-full text-headline-lg text-surface shadow-[0_12px_28px_rgba(40,35,42,0.16)] sm:size-24"
-        style={{ backgroundColor: profile.accent }}
-        aria-hidden="true"
-      >
-        {profile.icon}
-      </span>
-    </span>
-  );
-}
+const tiltClasses = [
+  classes.tiltA,
+  classes.tiltB,
+  classes.tiltC,
+  classes.tiltD,
+];
 
-function ProfileTile({ profile }: { profile: Profile }) {
+function ProfileTile({
+  profile,
+  index,
+}: {
+  profile: Profile;
+  index: number;
+}) {
+  const className = `${classes.tile} ${tiltClasses[index % tiltClasses.length]} ${
+    profile.href ? classes.tileActive : classes.tilePending
+  }`;
+  const style = {
+    "--profile-tone": profile.accent,
+    "--profile-soft": profile.accentSoft,
+  } as CSSProperties;
+
   const content = (
     <>
-      <ProfileAvatar profile={profile} />
-      <span className="text-headline-sm text-text-primary">{profile.name}</span>
-      {!profile.href && (
-        <span
-          className="rounded-full px-sm py-xs text-label-sm"
-          style={{
-            backgroundColor: profile.accentSoft,
-            color: profile.accent,
-          }}
-        >
-          Próximamente
-        </span>
+      <Box className={classes.avatar}>
+        <Box className={classes.avatarBlob}>
+          <span className={classes.avatarLetter}>{profile.icon}</span>
+        </Box>
+        <SparkleDoodle className={classes.avatarSparkle} />
+      </Box>
+
+      <Stack gap={2} align="center" className={classes.profileText}>
+        <Text component="span" className={classes.name}>
+          {profile.name}
+        </Text>
+        <Text component="span" className={classes.role}>
+          {profile.href ? "Tu espacio" : "En preparación"}
+        </Text>
+      </Stack>
+
+      {profile.href ? (
+        <Box component="span" className={classes.enterPill}>
+          Entrar
+          <ChevronRightIcon size={15} />
+        </Box>
+      ) : (
+        <Badge color="sun" variant="light" size="sm" className={classes.soonPill}>
+          Muy pronto
+        </Badge>
       )}
     </>
   );
 
-  const className =
-    "group flex min-w-0 flex-col items-center gap-md rounded-md bg-surface/85 px-md py-lg text-center shadow-[0_18px_45px_rgba(255,122,144,0.12)] outline-none transition duration-200 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background";
-
   if (profile.href) {
     return (
-      <Link
+      <Card
+        component={Link}
         href={profile.href}
-        className={`${className} hover:-translate-y-1 hover:bg-surface`}
         aria-label={`Entrar como ${profile.name}`}
+        padding={0}
+        radius="lg"
+        className={className}
+        style={style}
       >
         {content}
-      </Link>
+      </Card>
     );
   }
 
   return (
-    <button
+    <Card
+      component="button"
       type="button"
       disabled
-      className={`${className} cursor-not-allowed opacity-70`}
       aria-label={`${profile.name} pendiente`}
+      padding={0}
+      radius="lg"
+      className={className}
+      style={style}
     >
       {content}
-    </button>
+    </Card>
   );
 }
 
 export default function ProfileSelectionPage() {
   return (
-    <main
-      data-profile-theme="family"
-      className="min-h-screen bg-background px-lg py-xl text-text-primary"
-    >
-      <section className="mx-auto flex min-h-[calc(100vh-64px)] w-full max-w-5xl flex-col items-center justify-center gap-xl">
-        <div className="w-full text-center">
-          <p className="text-label-sm uppercase text-primary">
-            Familia Solano Zambrano
-          </p>
-          <h1 className="mt-sm text-headline-lg">¿Quién va a entrar?</h1>
-        </div>
+    <Box component="main" className={classes.main}>
+      <PageDoodles variant="home" />
 
-        <div className="grid w-full grid-cols-2 gap-md sm:grid-cols-5 sm:gap-lg">
-          {profiles.map((profile) => (
-            <ProfileTile key={profile.slug} profile={profile} />
+      <Container size={1180} className={classes.shell}>
+        <Box component="header" className={classes.topbar}>
+          <BrandMark />
+          <Badge
+            color="sun"
+            variant="light"
+            size="md"
+            className={classes.familyBadge}
+          >
+            Familia Solano Zambrano
+          </Badge>
+        </Box>
+
+        <Stack align="center" gap="md" className={classes.hero}>
+          <Text className="text-label" c="var(--color-coral-strong)">
+            Hola, familia
+          </Text>
+          <Title order={1} className={classes.title}>
+            ¿Quién va a <Marker>entrar</Marker>?
+          </Title>
+          <Text component="p" className={classes.lead}>
+            Elige tu rincón. Cada perfil tiene su espacio, su color y sus cosas
+            favoritas.
+          </Text>
+        </Stack>
+
+        <SimpleGrid
+          cols={{ base: 2, sm: 4 }}
+          spacing={{ base: "md", sm: "lg" }}
+          className={classes.grid}
+        >
+          {profiles.map((profile, index) => (
+            <ProfileTile key={profile.slug} profile={profile} index={index} />
           ))}
-        </div>
-      </section>
-    </main>
+        </SimpleGrid>
+
+        <Text component="p" className={classes.footer}>
+          Un lugar para cuidarnos, aprender y jugar.
+        </Text>
+      </Container>
+    </Box>
   );
 }

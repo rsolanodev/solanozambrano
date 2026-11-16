@@ -1,223 +1,72 @@
-@import "tailwindcss";
-
-@theme {
-  --color-background: #121116;
-  --color-surface: #201D26;
-  --color-surface-variant: #2C2732;
-  --color-primary: #F7C85F;
-  --color-primary-soft: #3D3340;
-  --color-secondary: #F4A7B9;
-  --color-text-primary: #FFF8FC;
-  --color-text-secondary: #BEB6C1;
-  --color-border-subtle: #3B3540;
-  --color-success: #5BC8A8;
-  --color-chart-primary: #F7C85F;
-  --color-chart-secondary: #3D3340;
-
-  --font-rounded: "SF Pro Rounded", ui-rounded, "Segoe UI Rounded", system-ui, sans-serif;
-  --font-text: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-full: 999px;
-
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --spacing-xl: 32px;
-
-  /* Ojo: las claves sm/md/lg/xl de espaciado hacen que Tailwind resuelva
-     max-w-sm/md/lg/xl contra estos valores (p. ej. 16px). Para anchos de
-     contenedor usar valores explícitos: max-w-[28rem]. */
+* {
+  box-sizing: border-box;
 }
 
-/* Typography styles shared by profile design documents. */
-@utility text-display {
-  font-family: var(--font-rounded);
-  font-size: 36px;
-  font-weight: 700;
-  line-height: 42px;
+html {
+  height: 100%;
 }
 
-@utility text-headline-lg {
-  font-family: var(--font-rounded);
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 34px;
-}
-
-@utility text-headline-md {
-  font-family: var(--font-rounded);
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 28px;
-}
-
-@utility text-headline-sm {
-  font-family: var(--font-rounded);
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 24px;
-}
-
-@utility text-body-md {
-  font-family: var(--font-text);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 22px;
-}
-
-@utility text-body-sm {
-  font-family: var(--font-text);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
-}
-
-@utility text-label-sm {
-  font-family: var(--font-text);
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 16px;
-  letter-spacing: 0.5px;
-}
-
-/* Base body styles */
 body {
-  background-color: var(--color-background);
-  color: var(--color-text-primary);
-  font-family: var(--font-text);
+  display: flex;
   min-height: 100vh;
-}
-
-/* Component utilities according to DESIGN.md */
-@utility btn-primary {
-  background-color: var(--color-primary);
-  color: var(--color-surface);
+  flex-direction: column;
+  margin: 0;
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
   font-family: var(--font-text);
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 22px;
-  border-radius: var(--radius-full);
-  padding: var(--spacing-md);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  transition: all 0.2s;
-  cursor: pointer;
-  border: none;
-
-  &:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
-  }
-
-  &:active {
-    transform: translateY(0);
-  }
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@utility btn-secondary {
-  background-color: var(--color-primary-soft);
-  color: var(--color-primary);
-  font-family: var(--font-text);
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 22px;
-  border-radius: var(--radius-full);
-  padding: var(--spacing-md);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  transition: all 0.2s;
-  cursor: pointer;
-  border: none;
-
-  &:hover {
-    opacity: 0.95;
-    transform: translateY(-1px);
-  }
-
-  &:active {
-    transform: translateY(0);
-  }
+button,
+input,
+textarea,
+select {
+  font: inherit;
 }
 
-@utility card-surface {
-  background-color: var(--color-surface);
-  color: var(--color-text-primary);
-  border-radius: var(--radius-md);
-  padding: var(--spacing-md);
-  border: 1px solid var(--color-border-subtle);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }
 
-@utility app-bar {
-  background-color: var(--color-background);
-  color: var(--color-text-primary);
-  height: 56px;
-  display: flex;
-  align-items: center;
-  padding: 0 var(--spacing-lg);
-  border-bottom: 1px solid var(--color-border-subtle);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
 }
 
-@utility bottom-nav {
-  background-color: var(--color-surface);
-  color: var(--color-text-secondary);
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border-top: 1px solid var(--color-border-subtle);
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 50;
+::selection {
+  background-color: var(--color-sun);
+  color: var(--color-ink);
 }
 
-@utility chip-topic {
-  background-color: var(--color-primary-soft);
-  color: var(--color-text-primary);
+/* Typography primitives shared by every screen. */
+.text-display {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  font-weight: 400;
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+}
+
+.text-label {
   font-family: var(--font-text);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 16px;
-  letter-spacing: 0.5px;
-  border-radius: var(--radius-full);
-  padding: var(--spacing-xs) var(--spacing-sm);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@utility pill-day-counter {
-  background-color: var(--color-surface);
-  color: var(--color-text-secondary);
-  border-radius: var(--radius-full);
-  padding: var(--spacing-xs) var(--spacing-sm);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@utility list-item-article {
-  background-color: var(--color-surface);
-  color: var(--color-text-primary);
-  font-family: var(--font-text);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
-  border-radius: var(--radius-sm);
-  padding: var(--spacing-md);
-  display: flex;
-  gap: var(--spacing-md);
-  align-items: center;
-  border: 1px solid var(--color-border-subtle);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 /* ─── Alaia animal player motion ───────────────────────────── */
@@ -236,10 +85,20 @@ body {
 @keyframes alaia-sound-wave {
   0%,
   100% {
-    transform: scaleY(0.35);
+    transform: scaleY(0.5);
   }
   50% {
     transform: scaleY(1);
+  }
+}
+
+@keyframes crayon-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--doodle-rotate, 0deg));
+  }
+  50% {
+    transform: translateY(-8px) rotate(var(--doodle-rotate, 0deg));
   }
 }
 
@@ -260,5 +119,14 @@ body {
 
   .alaia-sound-bar {
     transform: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

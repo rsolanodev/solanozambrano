@@ -1,9 +1,10 @@
 import { describe, it, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+import { render } from "@/lib/test-utils";
 import AlaiaLayout from "@/app/alaia/layout";
 
 describe("AlaiaLayout", () => {
-  it("applies the Alaia profile theme to its route tree", () => {
+  it("wraps the Alaia route tree in the shared app shell", () => {
     render(
       <AlaiaLayout>
         <span>Contenido Alaia</span>
@@ -11,7 +12,7 @@ describe("AlaiaLayout", () => {
     );
 
     const content = screen.getByText("Contenido Alaia");
-    expect(content.parentElement?.getAttribute("data-profile-theme")).toBe(
+    expect(content.parentElement?.getAttribute("data-app-shell")).toBe(
       "alaia"
     );
   });

@@ -1,54 +1,110 @@
+"use client";
+
 import Link from "next/link";
+import {
+  Badge,
+  Box,
+  Card,
+  Container,
+  Group,
+  Stack,
+  Text,
+  Title,
+} from "@mantine/core";
+import { BackButton } from "@/components/BackButton";
+import { Marker } from "@/components/Marker";
+import { PageDoodles } from "@/components/PageDoodles";
+import {
+  SparkleDoodle,
+  SunDoodle,
+} from "@/components/CrayonDoodles";
 import { alaiaApps } from "@/lib/alaia-apps";
 import { alaiaAnimalCount } from "@/lib/alaia-animals";
 import AnimalesLogo from "./AnimalesLogo";
-import { ChevronLeftIcon } from "./icons";
+import { ChevronRightIcon } from "./icons";
+import classes from "./launcher.module.css";
 
 export default function AlaiaLauncherPage() {
   return (
-    <main className="min-h-dvh bg-background px-lg pb-[calc(var(--spacing-xl)+env(safe-area-inset-bottom))] pt-[calc(var(--spacing-lg)+env(safe-area-inset-top))]">
-      <section className="mx-auto flex min-h-[calc(100dvh-4rem)] w-full max-w-3xl flex-col gap-xl">
-        <div>
-          <Link
-            href="/"
-            aria-label="Volver a perfiles"
-            className="inline-flex min-h-11 items-center gap-xs rounded-full bg-surface px-md py-sm text-body-sm text-text-secondary transition hover:bg-surface-variant hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-          >
-            <ChevronLeftIcon className="size-4" />
+    <Box component="main" className={classes.main}>
+      <PageDoodles variant="app" />
+
+      <Container size={1080} className={classes.shell}>
+        <Box component="header" className={classes.topbar}>
+          <BackButton href="/" label="Volver a perfiles">
             Perfiles
-          </Link>
-        </div>
+          </BackButton>
+          <Badge color="coral" variant="light" size="md" className={classes.context}>
+            Alaia
+          </Badge>
+        </Box>
 
-        <header className="text-center">
-          <p className="text-label-sm uppercase text-primary">Alaia</p>
-          <h1 className="mt-xs text-headline-lg">Mundo de Alaia</h1>
-          <p className="mt-sm text-body-md text-text-secondary">
-            Un lugar para descubrir, tocar y escuchar.
-          </p>
-        </header>
+        <Stack align="center" gap="md" className={classes.hero}>
+          <Text className="text-label" c="var(--color-coral-strong)">
+            El mundo de Alaia
+          </Text>
+          <Title order={1} className={classes.title}>
+            Mundo de <Marker>Alaia</Marker>
+          </Title>
+          <Text component="p" className={classes.lead}>
+            Animales, sonidos y signos para tocar, mirar y escuchar.
+          </Text>
+        </Stack>
 
-        <div className="flex flex-1 items-center justify-center">
+        <Box className={classes.appArea}>
           {alaiaApps.map((app) => (
-            <Link
+            <Card
               key={app.key}
+              component={Link}
               href={app.href}
               aria-label={`Entrar en ${app.name}`}
-              className="group flex w-full max-w-[24rem] flex-col items-center gap-md rounded-lg border border-border-subtle bg-surface px-lg py-xl text-center shadow-[0_24px_60px_rgba(124,58,237,0.14)] outline-none transition duration-200 hover:-translate-y-1 hover:border-primary/40 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-[0.99]"
+              padding={0}
+              radius="lg"
+              className={classes.appCard}
             >
-              <AnimalesLogo className="size-36 transition duration-200 group-hover:scale-[1.03] sm:size-40" />
-              <span className="text-headline-lg text-text-primary">
-                {app.name}
-              </span>
-              <span className="text-body-sm text-text-secondary">
-                {app.description}
-              </span>
-              <span className="inline-flex items-center rounded-full bg-primary-soft px-md py-xs text-label-sm text-primary">
-                {alaiaAnimalCount} animales
-              </span>
-            </Link>
+              <Box className={classes.logoStage}>
+                <SunDoodle className={classes.stageSun} />
+                <SparkleDoodle className={classes.stageSparkle} />
+                <AnimalesLogo className={classes.logo} size={180} />
+              </Box>
+
+              <Box className={classes.appContent}>
+                <Text className="text-label" c="var(--color-coral-strong)">
+                  App de Alaia
+                </Text>
+                <Title order={2} className={classes.appName}>
+                  {app.name}
+                </Title>
+                <Text component="p" className={classes.description}>
+                  Toca un animal para verlo en movimiento y escuchar su sonido.
+                  También puedes descubrir cómo se dice en lengua de signos.
+                </Text>
+
+                <Group gap="xs" className={classes.chips}>
+                  <Badge color="coral" variant="light">
+                    {alaiaAnimalCount} animales
+                  </Badge>
+                  <Badge color="sun" variant="light">
+                    Sonidos reales
+                  </Badge>
+                  <Badge color="sky" variant="light">
+                    Signos LSE
+                  </Badge>
+                </Group>
+
+                <Box component="span" className={classes.cta}>
+                  Entrar a {app.name}
+                  <ChevronRightIcon size={18} />
+                </Box>
+              </Box>
+            </Card>
           ))}
-        </div>
-      </section>
-    </main>
+        </Box>
+
+        <Text component="p" className={classes.footer}>
+          Un espacio pequeño, tranquilo y lleno de descubrimientos.
+        </Text>
+      </Container>
+    </Box>
   );
 }

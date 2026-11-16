@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import { ColorSchemeScript, MantineProvider } from "@mantine/core";
+import "@mantine/core/styles.css";
 import "./globals.css";
-import "@/styles/profile-themes.css";
+import "@/styles/design-tokens.css";
+import { theme } from "@/theme";
 
 export const metadata: Metadata = {
   title: "Materna - Calendario de Tensión",
@@ -14,8 +17,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className="h-full antialiased">
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="es" suppressHydrationWarning>
+      <head>
+        <ColorSchemeScript forceColorScheme="light" />
+      </head>
+      <body>
+        <MantineProvider theme={theme} forceColorScheme="light">
+          {children}
+        </MantineProvider>
+      </body>
     </html>
   );
 }

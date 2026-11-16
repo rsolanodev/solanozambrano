@@ -2,11 +2,24 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  Badge,
+  Box,
+  Button,
+  Container,
+  SimpleGrid,
+  Text,
+  Title,
+} from "@mantine/core";
 import { alaiaAnimals } from "@/lib/alaia-animals";
+import { BackButton } from "@/components/BackButton";
+import { Marker } from "@/components/Marker";
+import { PageDoodles } from "@/components/PageDoodles";
 import AnimalCard from "./AnimalCard";
 import AnimalPlayer from "./AnimalPlayer";
 import type { AudioState } from "./types";
-import { ChevronLeftIcon } from "../icons";
+import { ChevronRightIcon } from "../icons";
+import classes from "./animals.module.css";
 
 export default function AnimalsPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -157,54 +170,64 @@ export default function AnimalsPage() {
   const currentAnimal = openIndex === null ? null : alaiaAnimals[openIndex];
 
   return (
-    <main className="min-h-dvh bg-background text-text-primary">
-      <div
+    <Box component="main" className={classes.main}>
+      <PageDoodles variant="animals" />
+
+      <Box
         inert={openIndex !== null}
-        className="min-h-dvh px-md pb-[calc(var(--spacing-xl)+env(safe-area-inset-bottom))] pt-[calc(var(--spacing-md)+env(safe-area-inset-top))] sm:px-lg"
+        className={classes.content}
       >
-        <div className="mx-auto w-full max-w-5xl">
-          <header className="flex items-center justify-between gap-md">
-            <Link
-              href="/alaia"
-              aria-label="Volver a Mundo de Alaia"
-              className="flex size-11 shrink-0 items-center justify-center rounded-full bg-surface text-text-secondary shadow-sm transition hover:bg-surface-variant hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-            >
-              <ChevronLeftIcon />
-            </Link>
-            <div className="flex-1 text-center">
-              <p className="text-label-sm uppercase text-primary">
-                Mundo de Alaia
-              </p>
-              <h1 className="text-headline-lg">Animales</h1>
-            </div>
-            <span className="size-11 shrink-0" aria-hidden="true" />
-          </header>
+        <Container size={1180} className={classes.inner}>
+          <Box component="header" className={classes.topbar}>
+            <BackButton href="/alaia" label="Volver a Mundo de Alaia">
+              Mundo de Alaia
+            </BackButton>
+            <Badge color="sun" variant="light" size="md" className={classes.count}>
+              {alaiaAnimals.length} amigos
+            </Badge>
+          </Box>
 
-          <p className="mt-sm text-center text-body-sm text-text-secondary">
-            Toca un animal para verlo y escucharlo.
-          </p>
+          <Box className={classes.hero}>
+            <Text className="text-label" c="var(--color-coral-strong)">
+              Mundo de Alaia
+            </Text>
+            <Title order={1} className={classes.title}>
+              <Marker>Animales</Marker>
+            </Title>
+            <Text component="p" className={classes.intro}>
+              Toca un animal para verlo y escucharlo.
+            </Text>
+          </Box>
 
-          <div className="mt-lg grid grid-cols-2 gap-md sm:grid-cols-3 lg:grid-cols-4">
+          <SimpleGrid
+            cols={{ base: 2, sm: 3, lg: 4 }}
+            spacing={{ base: "md", lg: "lg" }}
+            className={classes.grid}
+          >
             {alaiaAnimals.map((animal, index) => (
               <AnimalCard
                 key={animal.id}
                 animal={animal}
+                index={index}
                 priority={index < 4}
                 onSelect={(trigger) => openAnimal(index, trigger)}
               />
             ))}
-          </div>
+          </SimpleGrid>
 
-          <footer className="mt-xl flex justify-center pb-sm">
-            <Link
+          <Box component="footer" className={classes.footer}>
+            <Button
+              component={Link}
               href="/alaia/animales/creditos"
-              className="inline-flex min-h-11 items-center text-label-sm text-text-secondary underline-offset-4 transition hover:text-text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              variant="default"
+              rightSection={<ChevronRightIcon size={16} />}
+              className={classes.creditsLink}
             >
-              Créditos
-            </Link>
-          </footer>
-        </div>
-      </div>
+              Créditos y fuentes
+            </Button>
+          </Box>
+        </Container>
+      </Box>
 
       <audio
         ref={audioRef}
@@ -215,7 +238,7 @@ export default function AnimalsPage() {
         }
         onEnded={() => setAudioState("idle")}
         onError={() => setAudioState("error")}
-        className="hidden"
+        className={classes.audio}
       />
 
       {currentAnimal && openIndex !== null ? (
@@ -230,6 +253,6 @@ export default function AnimalsPage() {
           onClose={() => closePlayer()}
         />
       ) : null}
-    </main>
+    </Box>
   );
 }

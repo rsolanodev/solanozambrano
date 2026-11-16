@@ -1,0 +1,167 @@
+.field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.doodle {
+  position: absolute;
+  opacity: 0.9;
+  animation: crayon-float 7s ease-in-out infinite;
+}
+
+.squiggle {
+  color: var(--color-sky);
+  top: 96px;
+  left: max(-24px, calc(50% - 620px));
+  width: 108px;
+  height: auto;
+  --doodle-rotate: -8deg;
+}
+
+.sun {
+  color: var(--color-sun);
+  top: 84px;
+  right: max(-8px, calc(50% - 610px));
+  width: 78px;
+  height: 78px;
+  --doodle-rotate: 8deg;
+  animation-delay: 0.8s;
+}
+
+.sparkle {
+  color: var(--color-grass);
+  bottom: 110px;
+  left: max(8px, calc(50% - 600px));
+  width: 42px;
+  height: 42px;
+  --doodle-rotate: -12deg;
+  animation-delay: 1.4s;
+}
+
+.loop {
+  color: var(--color-coral);
+  right: max(-8px, calc(50% - 600px));
+  bottom: 96px;
+  width: 96px;
+  height: auto;
+  --doodle-rotate: 6deg;
+  animation-delay: 0.4s;
+}
+
+.zigzag {
+  color: var(--color-sun);
+  top: 110px;
+  left: max(6px, calc(50% - 590px));
+  width: 56px;
+  height: auto;
+  --doodle-rotate: -6deg;
+  animation-delay: 1s;
+}
+
+/* App pages keep fewer, calmer doodles behind the content. */
+.app .squiggle,
+.animals .squiggle,
+.credits .squiggle {
+  top: 120px;
+  left: max(-18px, calc(50% - 600px));
+  width: 86px;
+  opacity: 0.65;
+}
+
+.app .sun,
+.animals .sun,
+.credits .sun {
+  top: 96px;
+  right: max(-4px, calc(50% - 590px));
+  width: 64px;
+  height: 64px;
+  opacity: 0.65;
+}
+
+.app .sparkle,
+.animals .sparkle,
+.credits .sparkle {
+  bottom: 72px;
+  left: max(10px, calc(50% - 580px));
+  width: 34px;
+  height: 34px;
+  opacity: 0.6;
+}
+
+.app .loop,
+.app .zigzag,
+.animals .loop,
+.credits .loop,
+.credits .zigzag {
+  display: none;
+}
+
+.animals .zigzag {
+  display: block;
+  top: auto;
+  bottom: 88px;
+  left: auto;
+  right: max(12px, calc(50% - 590px));
+  width: 48px;
+  opacity: 0.6;
+}
+
+.app .loop {
+  display: block;
+  right: max(-4px, calc(50% - 590px));
+  bottom: 80px;
+  width: 72px;
+  opacity: 0.55;
+}
+
+@media (max-width: 720px) {
+  .app .squiggle,
+  .app .sun,
+  .animals .squiggle,
+  .animals .sun,
+  .credits .squiggle,
+  .credits .sun {
+    display: none;
+  }
+
+  .squiggle {
+    top: 92px;
+    left: -28px;
+    width: 74px;
+    opacity: 0.55;
+  }
+
+  .sun {
+    top: 78px;
+    right: -14px;
+    width: 58px;
+    height: 58px;
+    opacity: 0.6;
+  }
+
+  .sparkle {
+    bottom: 52px;
+    left: 12px;
+    width: 30px;
+    height: 30px;
+    opacity: 0.5;
+  }
+
+  .loop {
+    right: -16px;
+    bottom: 44px;
+    width: 64px;
+    opacity: 0.45;
+  }
+
+  .zigzag {
+    top: auto;
+    bottom: 64px;
+    left: 16px;
+    width: 40px;
+    opacity: 0.45;
+  }
+}

@@ -22,7 +22,8 @@ El objetivo principal es proporcionar una interfaz cálida, tranquilizadora y su
 
 ### 2. Consistencia de Diseño (DESIGN.md)
 * **Requisito Obligatorio:** Antes de realizar cualquier implementación de UI/diseño o modificar componentes visuales, se **debe leer y seguir estrictamente el archivo `DESIGN.md`**.
-* La paleta de colores (rosa suave `#FF8AA5`, fondo `#FFF7FA`, etc.), tipografías, radios de esquina (`rounded`) y espaciados deben ser seguidos fielmente para mantener la armonía, calidez y tranquilidad de la aplicación.
+* `DESIGN.md` es la guía global del repositorio: define la paleta Crayon, las tipografías Averia Libre + Nunito, los radios, las sombras, los componentes y las reglas de accesibilidad.
+* No se crean temas por perfil. Todos los perfiles comparten el mismo sistema visual; los perfiles solo cambian nombre, icono y contenido.
 
 ---
 
@@ -48,6 +49,6 @@ El objetivo principal es proporcionar una interfaz cálida, tranquilizadora y su
 ## Tecnologías Utilizadas
 
 - **Framework:** Next.js (App Router, TypeScript)
-- **Estilos:** Tailwind CSS (basado en el archivo `DESIGN.md`)
+- **Estilos:** Mantine 9 + CSS Modules + tipografías locales (Averia Libre y Nunito), basado en `DESIGN.md`
 - **Gestión de Estado:** React Context / Hooks
-- **Testing:** Jest / Vitest + React Testing Library (por configurar)
+- **Testing:** Vitest + React Testing Library

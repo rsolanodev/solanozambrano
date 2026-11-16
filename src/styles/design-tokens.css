@@ -1,0 +1,104 @@
+@font-face {
+  font-family: "Averia Libre";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/averia-libre-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Averia Libre";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/averia-libre-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/nunito-variable.woff2") format("woff2");
+}
+
+:root {
+  --font-display: "Averia Libre", ui-rounded, sans-serif;
+  --font-text: "Nunito", system-ui, sans-serif;
+
+  /* Crayon palette */
+  --color-canvas: #fbf6e6;
+  --color-paper: #fffdf7;
+  --color-ink: #5d0045;
+  --color-ink-soft: #7e4b70;
+
+  --color-coral: #ff5833;
+  --color-coral-strong: #c23616;
+  --color-coral-dark: #a82c0f;
+  --color-coral-soft: #ffe3da;
+
+  --color-sun: #ffca24;
+  --color-sun-soft: #fff1bf;
+
+  --color-grass: #60ab59;
+  --color-grass-soft: #e2f2df;
+
+  --color-sky: #4a8aca;
+  --color-sky-soft: #e0edf9;
+
+  --color-plum-soft: #f4e6ee;
+  --color-line: #eadccb;
+
+  /* Semantic aliases used by the screens */
+  --color-background: var(--color-canvas);
+  --color-surface: var(--color-paper);
+  --color-surface-variant: var(--color-plum-soft);
+  --color-primary: var(--color-coral);
+  --color-primary-soft: var(--color-coral-soft);
+  --color-secondary: var(--color-sky);
+  --color-text-primary: var(--color-ink);
+  --color-text-secondary: var(--color-ink-soft);
+  --color-border-subtle: var(--color-line);
+  --color-success: var(--color-grass);
+  --color-error: var(--color-coral-strong);
+
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  --radius-media: 40px;
+  --radius-full: 999px;
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  --shadow-card: 0 7px 0 rgba(93, 0, 69, 0.06),
+    0 18px 40px rgba(93, 0, 69, 0.08);
+  --shadow-card-hover: 0 12px 0 rgba(93, 0, 69, 0.06),
+    0 28px 60px rgba(93, 0, 69, 0.16);
+  --shadow-action: 0 5px 0 rgba(93, 0, 69, 0.12);
+  --shadow-media: 0 22px 60px rgba(93, 0, 69, 0.18);
+}
+
+/*
+ * Mantine injects its CSS variables at runtime with :root specificity.
+ * The doubled :root keeps the semantic overrides ahead of that runtime sheet.
+ */
+:root:root {
+  --mantine-color-text: var(--color-ink);
+  --mantine-color-dimmed: var(--color-ink-soft);
+  --mantine-color-body: var(--color-paper);
+  --mantine-color-default: var(--color-paper);
+  --mantine-color-default-hover: var(--color-plum-soft);
+  --mantine-color-default-color: var(--color-ink);
+  --mantine-color-default-border: var(--color-line);
+  --mantine-color-disabled: var(--color-plum-soft);
+  --mantine-color-disabled-color: var(--color-ink-soft);
+  --mantine-color-disabled-border: var(--color-line);
+  --mantine-color-success: var(--color-grass);
+  --mantine-color-error: var(--color-coral-strong);
+  --mantine-color-anchor: var(--color-coral-strong);
+  --mantine-primary-color-contrast: var(--color-paper);
+}
