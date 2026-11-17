@@ -1,0 +1,42 @@
+{
+  "skill_name": "alaia-animals",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Quiero revisar la app de animales de Alaia antes de enseñársela. ¿Puedes comprobar si falta algún video, audio, poster o signo, o si alguno está roto, vacío o demasiado pesado? No cambies nada; solo dime qué encuentras y cómo lo comprobaste.",
+      "expected_output": "Informe en español que revisa los 22 animales, confirma que no faltan ni sobran archivos y aporta evidencia técnica (tamaños, dimensiones, duración o niveles) sin modificar el repositorio.",
+      "files": [],
+      "expectations": [
+        "Revisa los 22 animales e informa que no falta ningún video, audio, poster ni signo.",
+        "Aporta evidencia técnica concreta, como dimensiones, duración, tamaño o niveles de audio.",
+        "No modifica archivos del repositorio."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "El sonido de la rana no se entiende bien. Cámbialo por un croac claro y repetido, natural y agradable, sin ruidos fuertes. Actualiza lo necesario para que la app siga funcionando y no modifiques los demás animales.",
+      "expected_output": "Audio nuevo de rana con una vocalización clara y repetida, fuente y licencia registradas en el JSON, créditos regenerados, pruebas actualizadas si corresponde y solo los archivos de la rana modificados.",
+      "files": [],
+      "expectations": [
+        "El audio de la rana se reemplaza por una fuente nueva y verificable.",
+        "El JSON registra proveedor, autor, licencia, página y URL de descarga del nuevo audio.",
+        "El archivo rana.mp3 existe, dura entre 2 y 7 segundos y no satura.",
+        "Solo se modifican los medios y metadatos de la rana, no los de los demás animales.",
+        "Las pruebas relevantes y la comprobación de tipos pasan."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Agrega la jirafa a la app de animales de Alaia, con video, audio, poster y signo. Que el video se vea tranquilo y claro, y que el sonido sea suave. Actualiza créditos y pruebas; no toques los animales que ya están.",
+      "expected_output": "Jirafa integrada con todos sus campos y medios, créditos actualizados, página de créditos y pruebas ajustadas a 23 animales, y medios existentes intactos.",
+      "files": [],
+      "expectations": [
+        "El JSON incluye una entrada completa para la jirafa con rutas derivadas de su id.",
+        "Existen video, poster, audio y signo de la jirafa en las carpetas correctas.",
+        "Las pruebas se actualizan para 23 animales y 69 enlaces externos.",
+        "La página de créditos incluye la jirafa y las pruebas pasan.",
+        "Los medios de los animales existentes no se modifican."
+      ]
+    }
+  ]
+}
