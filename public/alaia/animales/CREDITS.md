@@ -1,6 +1,6 @@
 # Créditos de Animales
 
-Los videos son material de stock de Pexels. Los sonidos provienen de Wikimedia Commons. Los signos provienen de la Fundación CNSE. Todos conservan su licencia original y los archivos locales están recortados y normalizados para la app.
+Los videos son material de stock de Pexels. Los sonidos provienen de Wikimedia Commons y Freesound. Los signos provienen de la Fundación CNSE. Todos conservan su licencia original y los archivos locales están recortados y normalizados para la app.
 
 ## Vaca
 
@@ -16,14 +16,14 @@ Los videos son material de stock de Pexels. Los sonidos provienen de Wikimedia C
 
 ## Caballo
 
-- **Video**: [Pexels](https://www.pexels.com/video/serene-horse-grazing-in-verdant-pasture-29120466/) — Marc K (Pexels License).
+- **Video**: [Pexels](https://www.pexels.com/video/white-horse-grazing-in-lush-green-meadow-32112347/) — Christina & Peter (Pexels License).
 - **Audio**: [File:Wiehern.ogg](https://commons.wikimedia.org/wiki/File:Wiehern.ogg) — Hü. (Public domain).
 - **Signo LSE**: [Fundación CNSE · Mis primeros signos](https://www.fundacioncnse.org/educa/bancolse/animales-caballo.php) — Fundación CNSE (CC BY-NC-SA 3.0).
 
 ## Cerdo
 
 - **Video**: [Pexels](https://www.pexels.com/video/farm-pig-in-outdoor-enclosure-close-up-30158235/) — Théodore Carriqui (Pexels License).
-- **Audio**: [File:Pig grunt - Erdie.ogg](https://commons.wikimedia.org/wiki/File:Pig_grunt_-_Erdie.ogg) — erdie (CC BY 3.0).
+- **Audio**: [Pig Oink](https://freesound.org/people/qubodup/sounds/442906/) — qubodup (CC0).
 - **Signo LSE**: [Fundación CNSE · Mis primeros signos](https://www.fundacioncnse.org/educa/bancolse/animales-cerdo.php) — Fundación CNSE (CC BY-NC-SA 3.0).
 
 ## Gallo
@@ -46,14 +46,14 @@ Los videos son material de stock de Pexels. Los sonidos provienen de Wikimedia C
 
 ## Gato
 
-- **Video**: [Pexels](https://www.pexels.com/video/video-of-a-cat-6000759/) — Sam Lion (Pexels License).
-- **Audio**: [File:Meow of a Siamese cat - freemaster2.wav](https://commons.wikimedia.org/wiki/File:Meow_of_a_Siamese_cat_-_freemaster2.wav) — freemaster2 (CC0).
+- **Video**: [Pexels](https://www.pexels.com/video/cozy-cat-enjoys-gentle-petting-outdoors-34687595/) — celal keser (Pexels License).
+- **Audio**: [cat meow](https://freesound.org/people/tuberatanka/sounds/110011/) — tuberatanka (CC0).
 - **Signo LSE**: [Fundación CNSE · Mis primeros signos](https://www.fundacioncnse.org/educa/bancolse/animales-gato.php) — Fundación CNSE (CC BY-NC-SA 3.0).
 
 ## León
 
 - **Video**: [Pexels](https://www.pexels.com/video/close-up-on-lion-head-10418864/) — Nicky Pe (Pexels License).
-- **Audio**: [File:Lion raring-sound1TamilNadu178.ogg](https://commons.wikimedia.org/wiki/File:Lion_raring-sound1TamilNadu178.ogg) — த*உழவன் (Public domain).
+- **Audio**: [Lion loud.mp3](https://freesound.org/people/Bidone/sounds/69570/) — Bidone (CC0).
 - **Signo LSE**: [Fundación CNSE · Mis primeros signos](https://www.fundacioncnse.org/educa/bancolse/animales-leon.php) — Fundación CNSE (CC BY-NC-SA 3.0).
 
 ## Elefante
@@ -65,13 +65,13 @@ Los videos son material de stock de Pexels. Los sonidos provienen de Wikimedia C
 ## Mono
 
 - **Video**: [Pexels](https://www.pexels.com/video/animal-tree-monkeys-wilderness-26077636/) — Florian Delée (Pexels License).
-- **Audio**: [File:Pant-hoot call made by a male chimpanzee.ogg](https://commons.wikimedia.org/wiki/File:Pant-hoot_call_made_by_a_male_chimpanzee.ogg) — Pawel Fedurek et al. (CC BY 4.0).
+- **Audio**: [siamang monkeys](https://freesound.org/people/ikbenraar/sounds/819670/) — ikbenraar (CC0).
 - **Signo LSE**: [Fundación CNSE · Mis primeros signos](https://www.fundacioncnse.org/educa/bancolse/animales-mono.php) — Fundación CNSE (CC BY-NC-SA 3.0).
 
 ## Rana
 
 - **Video**: [Pexels](https://www.pexels.com/video/green-tree-frog-resting-on-clay-pot-34608782/) — 정규송 Nui MALAMA (Pexels License).
-- **Audio**: [File:Wood Frogs calling in spring.ogg](https://commons.wikimedia.org/wiki/File:Wood_Frogs_calling_in_spring.ogg) — D. Gordon E. Robertson (CC BY-SA 3.0).
+- **Audio**: [File:Single Frog Croak.oga](https://commons.wikimedia.org/wiki/File:Single_Frog_Croak.oga) — MichaeltheFox8621 (CC BY-SA 4.0).
 - **Signo LSE**: [DILSE · Fundación CNSE](https://fundacioncnse-dilse.org/termino/rana-3158) — Fundación CNSE (Uso educativo no comercial).
 
 ## Burro
@@ -82,7 +82,7 @@ Los videos son material de stock de Pexels. Los sonidos provienen de Wikimedia C
 
 ## Cabra
 
-- **Video**: [Pexels](https://www.pexels.com/video/a-goat-with-brown-and-white-spots-on-its-face-20523320/) — Ammad Rasool (Pexels License).
+- **Video**: [Pexels](https://www.pexels.com/video/young-goat-grazing-in-natural-habitat-36843729/) — Stephen Leonardi (Pexels License).
 - **Audio**: [File:Herd of goats bleating.ogg](https://commons.wikimedia.org/wiki/File:Herd_of_goats_bleating.ogg) — stephan (Public domain).
 - **Signo LSE**: [Fundación CNSE · Mis primeros signos](https://www.fundacioncnse.org/educa/bancolse/animales-cabra.php) — Fundación CNSE (CC BY-NC-SA 3.0).
 
@@ -101,19 +101,19 @@ Los videos son material de stock de Pexels. Los sonidos provienen de Wikimedia C
 ## Loro
 
 - **Video**: [Pexels](https://www.pexels.com/video/close-up-video-of-a-parrot-7722579/) — Mikhail Nilov (Pexels License).
-- **Audio**: [File:African grey parrot sound.wav](https://commons.wikimedia.org/wiki/File:African_grey_parrot_sound.wav) — Ganesh Mohan T (CC BY-SA 4.0).
+- **Audio**: [File:Pionus seniloides - White-capped Parrot XC251379.mp3](https://commons.wikimedia.org/wiki/File:Pionus_seniloides_-_White-capped_Parrot_XC251379.mp3) — Niels Krabbe (CC BY-SA 4.0).
 - **Signo LSE**: [Fundación CNSE · Mis primeros signos](https://www.fundacioncnse.org/educa/bancolse/animales-loro.php) — Fundación CNSE (CC BY-NC-SA 3.0).
 
 ## Tigre
 
 - **Video**: [Pexels](https://www.pexels.com/video/a-tiger-walking-7378625/) — Nicky Pe (Pexels License).
-- **Audio**: [File:Tiger Mad.ogg](https://commons.wikimedia.org/wiki/File:Tiger_Mad.ogg) — Bilberryerer (CC BY-SA 4.0).
+- **Audio**: [File:439280 schots angry-tiger.wav](https://commons.wikimedia.org/wiki/File:439280_schots_angry-tiger.wav) — schots (CC0).
 - **Signo LSE**: [Fundación CNSE · Mis primeros signos](https://www.fundacioncnse.org/educa/bancolse/animales-tigre.php) — Fundación CNSE (CC BY-NC-SA 3.0).
 
 ## Oso
 
-- **Video**: [Pexels](https://www.pexels.com/video/close-up-shot-of-a-wild-bear-7505572/) — Nicky Pe (Pexels License).
-- **Audio**: [File:Bear growl.ogg](https://commons.wikimedia.org/wiki/File:Bear_growl.ogg) — Shizhao (CC BY 3.0).
+- **Video**: [Pexels](https://www.pexels.com/video/brown-bear-in-natural-forest-setting-33597038/) — Lorenzo Boldorini (Pexels License).
+- **Audio**: [Bear Angry Growl](https://freesound.org/people/celldroid/sounds/763026/) — celldroid (CC0).
 - **Signo LSE**: [Fundación CNSE · Mis primeros signos](https://www.fundacioncnse.org/educa/bancolse/animales-oso.php) — Fundación CNSE (CC BY-NC-SA 3.0).
 
 ## Delfín
@@ -130,6 +130,6 @@ Los videos son material de stock de Pexels. Los sonidos provienen de Wikimedia C
 
 ## Abeja
 
-- **Video**: [Pexels](https://www.pexels.com/video/a-close-up-on-a-bee-on-a-flower-9737862/) — K (Pexels License).
+- **Video**: [Pexels](https://www.pexels.com/video/honey-bee-pollinating-yellow-flower-close-up-32351701/) — ufuk iseloglu (Pexels License).
 - **Audio**: [File:Bee buzzing sound (animal noises).opus](https://commons.wikimedia.org/wiki/File:Bee_buzzing_sound_(animal_noises).opus) — Free Sounds Library (CC BY 3.0).
 - **Signo LSE**: [Fundación CNSE · Mis primeros signos](https://www.fundacioncnse.org/educa/bancolse/animales-abeja.php) — Fundación CNSE (CC BY-NC-SA 3.0).

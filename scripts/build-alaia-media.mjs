@@ -73,7 +73,8 @@ function audioFilter(animal) {
   const source = animal.sources.audio;
   const duration = source.duration;
   const fadeStart = Math.max(0, duration - 0.25);
-  const normalize = "loudnorm=I=-16:TP=-1.5:LRA=11";
+  const normalize = `loudnorm=I=${source.loudness ?? -16}:TP=-1.5:LRA=11`;
+  const tone = source.bass ? `bass=g=${source.bass}:f=90,` : "";
 
   if (source.repeat && source.repeat > 1) {
     const repeat = source.repeat;
@@ -88,7 +89,7 @@ function audioFilter(animal) {
     ).join(";");
     const mixInputs = Array.from({ length: repeat }, (_, index) => `[a${index}]`).join("");
     return {
-      complex: `${split}${delays};${mixInputs}amix=inputs=${repeat}:duration=longest:dropout_transition=0:normalize=0,${normalize},afade=t=in:st=0:d=0.03,afade=t=out:st=${fadeStart}:d=0.25[a]`,
+      complex: `${split}${delays};${mixInputs}amix=inputs=${repeat}:duration=longest:dropout_transition=0:normalize=0,${tone}${normalize},afade=t=in:st=0:d=0.03,afade=t=out:st=${fadeStart}:d=0.25[a]`,
       output: "[a]",
     };
   }
@@ -97,7 +98,7 @@ function audioFilter(animal) {
     ? "silenceremove=start_periods=1:start_duration=0.1:start_threshold=-50dB,"
     : "";
   return {
-    simple: `${silence}${normalize},afade=t=in:st=0:d=0.03,afade=t=out:st=${fadeStart}:d=0.25`,
+    simple: `${silence}${tone}${normalize},afade=t=in:st=0:d=0.03,afade=t=out:st=${fadeStart}:d=0.25`,
     output: null,
   };
 }
@@ -177,13 +178,15 @@ for (const animal of animals) {
     }
 
     if (!isFresh(audioPath)) {
-      console.log("  audio · descargando de Wikimedia");
+      console.log(`  audio · descargando de ${animal.sources.audio.provider}`);
       await download(animal.sources.audio.downloadUrl, sourceAudio);
       console.log("  audio · normalizando");
       const filter = audioFilter(animal);
       if (filter.complex) {
         await run(ffmpeg, [
           "-y",
+          "-ss",
+          String(animal.sources.audio.start ?? 0),
           "-i",
           sourceAudio,
           "-filter_complex",
@@ -203,6 +206,8 @@ for (const animal of animals) {
       } else {
         await run(ffmpeg, [
           "-y",
+          "-ss",
+          String(animal.sources.audio.start ?? 0),
           "-i",
           sourceAudio,
           "-af",
@@ -274,7 +279,7 @@ const credits = animals
 
 await writeFile(
   path.join(publicDir, "CREDITS.md"),
-  `# Créditos de Animales\n\nLos videos son material de stock de Pexels. Los sonidos provienen de Wikimedia Commons. Los signos provienen de la Fundación CNSE. Todos conservan su licencia original y los archivos locales están recortados y normalizados para la app.\n\n${credits}`,
+  `# Créditos de Animales\n\nLos videos son material de stock de Pexels. Los sonidos provienen de Wikimedia Commons y Freesound. Los signos provienen de la Fundación CNSE. Todos conservan su licencia original y los archivos locales están recortados y normalizados para la app.\n\n${credits}`,
   "utf8"
 );
 

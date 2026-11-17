@@ -60,6 +60,45 @@ describe("AnimalCreditsPage", () => {
     expect(screen.getAllByText(/CC BY-NC-SA 3\.0/).length).toBeGreaterThan(0);
   });
 
+  it("credits Freesound audio and names its provider", () => {
+    render(<AnimalCreditsPage />);
+
+    expect(
+      screen.getByText(/Wikimedia Commons y Freesound/i)
+    ).toBeInTheDocument();
+
+    const pigAudio = screen.getByRole("link", {
+      name: /audio de cerdo en freesound/i,
+    });
+    expect(pigAudio).toHaveAttribute(
+      "href",
+      "https://freesound.org/people/qubodup/sounds/442906/"
+    );
+    expect(pigAudio).toHaveAttribute("target", "_blank");
+    expect(pigAudio).toHaveAttribute("rel", "noreferrer");
+
+    expect(
+      screen.getByRole("link", { name: /audio de oso en freesound/i })
+    ).toHaveAttribute(
+      "href",
+      "https://freesound.org/people/celldroid/sounds/763026/"
+    );
+
+    expect(
+      screen.getByRole("link", { name: /audio de gato en freesound/i })
+    ).toHaveAttribute(
+      "href",
+      "https://freesound.org/people/tuberatanka/sounds/110011/"
+    );
+
+    expect(
+      screen.getByRole("link", { name: /audio de león en freesound/i })
+    ).toHaveAttribute(
+      "href",
+      "https://freesound.org/people/Bidone/sounds/69570/"
+    );
+  });
+
   it("marks every external source link as external", () => {
     render(<AnimalCreditsPage />);
 

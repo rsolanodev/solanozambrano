@@ -33,12 +33,16 @@ describe("alaiaAnimals", () => {
       expect(video.duration).toBeGreaterThan(0);
       expect(video.crop.length).toBeGreaterThan(0);
 
-      expect(audio.provider).toBe("Wikimedia Commons");
+      expect(["Wikimedia Commons", "Freesound"]).toContain(audio.provider);
       expect(audio.page).toMatch(/^https:\/\//);
-      expect(audio.title).toMatch(/^File:/);
+      expect(audio.title.length).toBeGreaterThan(0);
+      if (audio.provider === "Wikimedia Commons") {
+        expect(audio.title).toMatch(/^File:/);
+      }
       expect(audio.author.length).toBeGreaterThan(0);
       expect(audio.license.length).toBeGreaterThan(0);
       expect(audio.downloadUrl).toMatch(/^https:\/\//);
+      expect(audio.start).toBeGreaterThanOrEqual(0);
       expect(audio.duration).toBeGreaterThan(0);
 
       expect(animal.sign.image).toBe(`/alaia/animales/signos/${animal.id}.jpg`);
@@ -49,6 +53,57 @@ describe("alaiaAnimals", () => {
       expect(animal.sign.source.license.length).toBeGreaterThan(0);
       expect(animal.sign.source.downloadUrl).toMatch(/^https:\/\//);
     }
+  });
+
+  it("uses the refreshed media selected for the requested animals", () => {
+    const expectedVideoIds: Record<string, string> = {
+      caballo: "32112347",
+      gato: "34687595",
+      cabra: "36843729",
+      oso: "33597038",
+      abeja: "32351701",
+    };
+
+    for (const [id, downloadId] of Object.entries(expectedVideoIds)) {
+      expect(getAlaiaAnimal(id)?.sources.video.downloadId).toBe(downloadId);
+    }
+
+    expect(getAlaiaAnimal("cerdo")?.sources.audio).toMatchObject({
+      provider: "Freesound",
+      title: "Pig Oink",
+      license: "CC0",
+    });
+    expect(getAlaiaAnimal("gato")?.sources.audio).toMatchObject({
+      provider: "Freesound",
+      title: "cat meow",
+      license: "CC0",
+      repeat: 4,
+    });
+    expect(getAlaiaAnimal("leon")?.sources.audio).toMatchObject({
+      provider: "Freesound",
+      title: "Lion loud.mp3",
+      license: "CC0",
+    });
+    expect(getAlaiaAnimal("leon")?.sources.audio.loudness).toBeLessThan(-12);
+    expect(getAlaiaAnimal("mono")?.sources.audio).toMatchObject({
+      provider: "Freesound",
+      title: "siamang monkeys",
+      license: "CC0",
+    });
+    expect(getAlaiaAnimal("rana")?.sources.audio.title).toBe(
+      "File:Single Frog Croak.oga"
+    );
+    expect(getAlaiaAnimal("loro")?.sources.audio.title).toContain(
+      "White-capped Parrot"
+    );
+    expect(getAlaiaAnimal("tigre")?.sources.audio.title).toContain(
+      "angry-tiger"
+    );
+    expect(getAlaiaAnimal("oso")?.sources.audio).toMatchObject({
+      provider: "Freesound",
+      title: "Bear Angry Growl",
+      license: "CC0",
+    });
   });
 
   it("serves all media from local optimized assets", () => {

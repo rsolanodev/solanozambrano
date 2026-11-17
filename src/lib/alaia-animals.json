@@ -102,13 +102,13 @@
     "sources": {
       "video": {
         "provider": "Pexels",
-        "page": "https://www.pexels.com/video/serene-horse-grazing-in-verdant-pasture-29120466/",
-        "author": "Marc K",
+        "page": "https://www.pexels.com/video/white-horse-grazing-in-lush-green-meadow-32112347/",
+        "author": "Christina & Peter",
         "license": "Pexels License",
-        "downloadId": "29120466",
+        "downloadId": "32112347",
         "start": 0.3,
         "duration": 5,
-        "crop": "crop=720:720:600:100"
+        "crop": "crop=1080:1080:300:0"
       },
       "audio": {
         "provider": "Wikimedia Commons",
@@ -156,17 +156,17 @@
         "crop": "center"
       },
       "audio": {
-        "provider": "Wikimedia Commons",
-        "title": "File:Pig grunt - Erdie.ogg",
-        "page": "https://commons.wikimedia.org/wiki/File:Pig_grunt_-_Erdie.ogg",
-        "author": "erdie",
-        "license": "CC BY 3.0",
-        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/transcoded/a/ac/Pig_grunt_-_Erdie.ogg/Pig_grunt_-_Erdie.ogg.mp3",
+        "provider": "Freesound",
+        "title": "Pig Oink",
+        "page": "https://freesound.org/people/qubodup/sounds/442906/",
+        "author": "qubodup",
+        "license": "CC0",
+        "downloadUrl": "https://cdn.freesound.org/previews/442/442906_71257-hq.mp3",
         "start": 0,
-        "duration": 3,
+        "duration": 4,
         "trimSilence": false,
-        "repeat": 3,
-        "gap": 0.9
+        "repeat": 5,
+        "gap": 0.8
       }
     },
     "sign": {
@@ -329,24 +329,27 @@
     "sources": {
       "video": {
         "provider": "Pexels",
-        "page": "https://www.pexels.com/video/video-of-a-cat-6000759/",
-        "author": "Sam Lion",
+        "page": "https://www.pexels.com/video/cozy-cat-enjoys-gentle-petting-outdoors-34687595/",
+        "author": "celal keser",
         "license": "Pexels License",
-        "downloadId": "6000759",
-        "start": 0.3,
+        "downloadId": "34687595",
+        "start": 4,
         "duration": 5,
-        "crop": "center"
+        "crop": "crop=2160:2160:0:0"
       },
       "audio": {
-        "provider": "Wikimedia Commons",
-        "title": "File:Meow of a Siamese cat - freemaster2.wav",
-        "page": "https://commons.wikimedia.org/wiki/File:Meow_of_a_Siamese_cat_-_freemaster2.wav",
-        "author": "freemaster2",
+        "provider": "Freesound",
+        "title": "cat meow",
+        "page": "https://freesound.org/people/tuberatanka/sounds/110011/",
+        "author": "tuberatanka",
         "license": "CC0",
-        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/81/Meow_of_a_Siamese_cat_-_freemaster2.wav/Meow_of_a_Siamese_cat_-_freemaster2.wav.mp3",
+        "downloadUrl": "https://cdn.freesound.org/previews/110/110011_1537422-hq.mp3",
         "start": 0,
-        "duration": 6,
-        "trimSilence": true
+        "duration": 5.2,
+        "trimSilence": false,
+        "repeat": 4,
+        "gap": 1.2,
+        "loudness": -13.5
       }
     },
     "sign": {
@@ -383,15 +386,17 @@
         "crop": "center"
       },
       "audio": {
-        "provider": "Wikimedia Commons",
-        "title": "File:Lion raring-sound1TamilNadu178.ogg",
-        "page": "https://commons.wikimedia.org/wiki/File:Lion_raring-sound1TamilNadu178.ogg",
-        "author": "த*உழவன்",
-        "license": "Public domain",
-        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/7d/Lion_raring-sound1TamilNadu178.ogg/Lion_raring-sound1TamilNadu178.ogg.mp3",
-        "start": 0,
+        "provider": "Freesound",
+        "title": "Lion loud.mp3",
+        "page": "https://freesound.org/people/Bidone/sounds/69570/",
+        "author": "Bidone",
+        "license": "CC0",
+        "downloadUrl": "https://cdn.freesound.org/previews/69/69570_706955-hq.mp3",
+        "start": 27.5,
         "duration": 6,
-        "trimSilence": true
+        "trimSilence": false,
+        "loudness": -13.5,
+        "bass": 3
       }
     },
     "sign": {
@@ -473,15 +478,15 @@
         "crop": "crop=ih:ih:0:0"
       },
       "audio": {
-        "provider": "Wikimedia Commons",
-        "title": "File:Pant-hoot call made by a male chimpanzee.ogg",
-        "page": "https://commons.wikimedia.org/wiki/File:Pant-hoot_call_made_by_a_male_chimpanzee.ogg",
-        "author": "Pawel Fedurek et al.",
-        "license": "CC BY 4.0",
-        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/transcoded/5/56/Pant-hoot_call_made_by_a_male_chimpanzee.ogg/Pant-hoot_call_made_by_a_male_chimpanzee.ogg.mp3",
-        "start": 0,
-        "duration": 6,
-        "trimSilence": true
+        "provider": "Freesound",
+        "title": "siamang monkeys",
+        "page": "https://freesound.org/people/ikbenraar/sounds/819670/",
+        "author": "ikbenraar",
+        "license": "CC0",
+        "downloadUrl": "https://cdn.freesound.org/previews/819/819670_754558-hq.mp3",
+        "start": 30,
+        "duration": 5,
+        "trimSilence": false
       }
     },
     "sign": {
@@ -519,14 +524,14 @@
       },
       "audio": {
         "provider": "Wikimedia Commons",
-        "title": "File:Wood Frogs calling in spring.ogg",
-        "page": "https://commons.wikimedia.org/wiki/File:Wood_Frogs_calling_in_spring.ogg",
-        "author": "D. Gordon E. Robertson",
-        "license": "CC BY-SA 3.0",
-        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/e2/Wood_Frogs_calling_in_spring.ogg/Wood_Frogs_calling_in_spring.ogg.mp3",
+        "title": "File:Single Frog Croak.oga",
+        "page": "https://commons.wikimedia.org/wiki/File:Single_Frog_Croak.oga",
+        "author": "MichaeltheFox8621",
+        "license": "CC BY-SA 4.0",
+        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/9f/Single_Frog_Croak.oga/Single_Frog_Croak.oga.mp3",
         "start": 0,
-        "duration": 6,
-        "trimSilence": true
+        "duration": 4.4,
+        "trimSilence": false
       }
     },
     "sign": {
@@ -599,13 +604,13 @@
     "sources": {
       "video": {
         "provider": "Pexels",
-        "page": "https://www.pexels.com/video/a-goat-with-brown-and-white-spots-on-its-face-20523320/",
-        "author": "Ammad Rasool",
+        "page": "https://www.pexels.com/video/young-goat-grazing-in-natural-habitat-36843729/",
+        "author": "Stephen Leonardi",
         "license": "Pexels License",
-        "downloadId": "20523320",
-        "start": 0.3,
+        "downloadId": "36843729",
+        "start": 4,
         "duration": 5,
-        "crop": "center"
+        "crop": "crop=1080:1080:0:400"
       },
       "audio": {
         "provider": "Wikimedia Commons",
@@ -744,12 +749,12 @@
       },
       "audio": {
         "provider": "Wikimedia Commons",
-        "title": "File:African grey parrot sound.wav",
-        "page": "https://commons.wikimedia.org/wiki/File:African_grey_parrot_sound.wav",
-        "author": "Ganesh Mohan T",
+        "title": "File:Pionus seniloides - White-capped Parrot XC251379.mp3",
+        "page": "https://commons.wikimedia.org/wiki/File:Pionus_seniloides_-_White-capped_Parrot_XC251379.mp3",
+        "author": "Niels Krabbe",
         "license": "CC BY-SA 4.0",
-        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/2d/African_grey_parrot_sound.wav/African_grey_parrot_sound.wav.mp3",
-        "start": 0,
+        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Pionus_seniloides_-_White-capped_Parrot_XC251379.mp3",
+        "start": 6,
         "duration": 6,
         "trimSilence": true
       }
@@ -789,14 +794,14 @@
       },
       "audio": {
         "provider": "Wikimedia Commons",
-        "title": "File:Tiger Mad.ogg",
-        "page": "https://commons.wikimedia.org/wiki/File:Tiger_Mad.ogg",
-        "author": "Bilberryerer",
-        "license": "CC BY-SA 4.0",
-        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/40/Tiger_Mad.ogg/Tiger_Mad.ogg.mp3",
-        "start": 0,
+        "title": "File:439280 schots angry-tiger.wav",
+        "page": "https://commons.wikimedia.org/wiki/File:439280_schots_angry-tiger.wav",
+        "author": "schots",
+        "license": "CC0",
+        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/29/439280_schots_angry-tiger.wav/439280_schots_angry-tiger.wav.mp3",
+        "start": 10,
         "duration": 6,
-        "trimSilence": true
+        "trimSilence": false
       }
     },
     "sign": {
@@ -824,23 +829,23 @@
     "sources": {
       "video": {
         "provider": "Pexels",
-        "page": "https://www.pexels.com/video/close-up-shot-of-a-wild-bear-7505572/",
-        "author": "Nicky Pe",
+        "page": "https://www.pexels.com/video/brown-bear-in-natural-forest-setting-33597038/",
+        "author": "Lorenzo Boldorini",
         "license": "Pexels License",
-        "downloadId": "7505572",
-        "start": 0.3,
+        "downloadId": "33597038",
+        "start": 0.5,
         "duration": 5,
-        "crop": "center"
+        "crop": "crop=2160:2160:0:700"
       },
       "audio": {
-        "provider": "Wikimedia Commons",
-        "title": "File:Bear growl.ogg",
-        "page": "https://commons.wikimedia.org/wiki/File:Bear_growl.ogg",
-        "author": "Shizhao",
-        "license": "CC BY 3.0",
-        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/4e/Bear_growl.ogg/Bear_growl.ogg.mp3",
-        "start": 0,
-        "duration": 6,
+        "provider": "Freesound",
+        "title": "Bear Angry Growl",
+        "page": "https://freesound.org/people/celldroid/sounds/763026/",
+        "author": "celldroid",
+        "license": "CC0",
+        "downloadUrl": "https://cdn.freesound.org/previews/763/763026_1764719-hq.mp3",
+        "start": 0.3,
+        "duration": 3,
         "trimSilence": true
       }
     },
@@ -959,13 +964,13 @@
     "sources": {
       "video": {
         "provider": "Pexels",
-        "page": "https://www.pexels.com/video/a-close-up-on-a-bee-on-a-flower-9737862/",
-        "author": "K",
+        "page": "https://www.pexels.com/video/honey-bee-pollinating-yellow-flower-close-up-32351701/",
+        "author": "ufuk iseloglu",
         "license": "Pexels License",
-        "downloadId": "9737862",
+        "downloadId": "32351701",
         "start": 0.3,
         "duration": 5,
-        "crop": "crop=2160:2160:0:0"
+        "crop": "crop=1080:1080:325:0"
       },
       "audio": {
         "provider": "Wikimedia Commons",

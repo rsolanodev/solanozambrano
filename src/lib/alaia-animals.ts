@@ -24,6 +24,8 @@ export type AnimalAudioSource = BaseSource & {
   trimSilence?: boolean;
   repeat?: number;
   gap?: number;
+  loudness?: number;
+  bass?: number;
 };
 
 export type AnimalSignSource = BaseSource & {

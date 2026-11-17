@@ -53,8 +53,8 @@ export default function AnimalCreditsPage() {
           </Title>
           <Text component="p" className={classes.lead}>
             Los videos son material de stock de Pexels. Los sonidos provienen de
-            Wikimedia Commons. Los signos provienen de la Fundación CNSE y
-            conservan su licencia original.
+            Wikimedia Commons y Freesound. Los signos provienen de la Fundación
+            CNSE y conservan su licencia original.
           </Text>
         </Box>
 
@@ -131,7 +131,7 @@ export default function AnimalCreditsPage() {
                     <Anchor
                       href={animal.sources.audio.page}
                       {...externalLinkProps}
-                      aria-label={`Audio de ${animal.name} en Wikimedia Commons (abre en una pestaña nueva)`}
+                      aria-label={`Audio de ${animal.name} en ${animal.sources.audio.provider} (abre en una pestaña nueva)`}
                       underline="always"
                     >
                       {animal.sources.audio.title.replace(/^File:/, "")} ↗
