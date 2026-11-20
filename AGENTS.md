@@ -1,54 +1,114 @@
-# SolanoZambrano - Tensiometro Calendar (Guía de Desarrollo)
+# SolanoZambrano · Guía de desarrollo
 
-Este documento sirve como guía de referencia y especificaciones para el desarrollo de la aplicación **SolanoZambrano - Tensiometro Calendar**.
+Guía de referencia para trabajar en **SolanoZambrano**, la web familiar de los Solano Zambrano. Reúne un selector de perfiles y un espacio propio para cada miembro de la familia. El tono es cálido y cuidado; la interfaz es Mobile-First y visual.
 
-## Descripción del Proyecto
-
-**SolanoZambrano** es una aplicación web diseñada para que una mujer embarazada pueda llevar un registro diario de:
-1. **Datos de tensión arterial** (presión sistólica, diastólica y pulso).
-2. **Control de medicación** (si ha tomado la pastilla de la tensión diaria).
-3. **Notas y síntomas diarios** (opcional, para añadir contexto emocional o de salud física).
-
-El objetivo principal es proporcionar una interfaz cálida, tranquilizadora y sumamente intuitiva, optimizada para dispositivos móviles (diseño Mobile-First).
+Estado actual: solo el espacio de **Alaia** está construido (`/alaia` y su app de animales). Los demás perfiles aparecen como “Muy pronto”.
 
 ---
 
-## Directrices Clave de Desarrollo
+## La familia y para quién es cada perfil
 
-### 1. Pruebas y Cobertura (Testing Mandate)
-* **Requisito Obligatorio:** Se deben añadir pruebas unitarias o de integración para **cada nueva funcionalidad** que se implemente.
-* Esto incluye componentes de interfaz clave, lógica de estado, validación de formularios y utilidades de cálculo de tensión arterial.
-* El framework de pruebas a utilizar debe estar integrado con Next.js (por ejemplo, Jest o Vitest junto con React Testing Library).
+| Perfil | Quién es | Estado |
+| --- | --- | --- |
+| **Albany** | 25 años. Madre de Alaia y Lucía. | Pendiente |
+| **Rubén** | 26 años. Padre de Alaia y Lucía. | Pendiente |
+| **Alaia** | Hija. Es sorda y en casa todos estamos aprendiendo LSE. | Activo: `/alaia` |
+| **Lucía** | Hija de Albany y Rubén, hermana de Alaia. | Pendiente |
+| **Coco** | El perro de la familia: un cavalier king Charles spaniel. | Pendiente |
 
-### 2. Consistencia de Diseño (DESIGN.md)
-* **Requisito Obligatorio:** Antes de realizar cualquier implementación de UI/diseño o modificar componentes visuales, se **debe leer y seguir estrictamente el archivo `DESIGN.md`**.
-* `DESIGN.md` es la guía global del repositorio: define la paleta Crayon, las tipografías Averia Libre + Nunito, los radios, las sombras, los componentes y las reglas de accesibilidad.
-* No se crean temas por perfil. Todos los perfiles comparten el mismo sistema visual; los perfiles solo cambian nombre, icono y contenido.
+Cómo leer la tabla:
 
----
+- **Albany y Rubén** son las personas adultas que usan la app. Sus espacios deben ser rápidos, legibles y tranquilos; nada infantilizado.
+- **Alaia** es la usuaria del espacio infantil. Su sordera no es un detalle: condiciona cómo se presenta cada contenido.
+- **Lucía** es hija de Albany y Rubén. Su espacio está por definir; antes de diseñarlo, pregunta qué necesita.
+- **Coco** no navega solo. Su perfil es un guiño familiar: trátalo con cariño y humor, sin fingir que es un usuario real.
 
-## Estructura y Flujo de la Aplicación (Plan General)
+### Alaia y la Lengua de Signos Española (LSE)
 
-### Funcionalidades Core
-1. **Calendario Mensual/Semanal:**
-   - Visualización de los días del mes.
-   - Indicador visual rápido en cada día (por ejemplo, si se registró la tensión, si se tomó la pastilla, o alertas de tensión fuera de rango).
-2. **Formulario de Registro Diario:**
-   - Entrada de presión sistólica y diastólica.
-   - Entrada de pulso.
-   - Interruptor (toggle) o checkbox para marcar "Pastilla tomada".
-   - Campo de notas/síntomas.
-3. **Panel de Estadísticas y Alertas:**
-   - Resumen de lecturas recientes.
-   - Indicadores visuales claros utilizando colores de seguridad y éxito (como el verde `#5BC8A8` para niveles correctos y rosa/rojo primario para alertas de tensión alta).
-4. **Artículos y Consejos (Opcional/Sección Informativa):**
-   - Acceso rápido a tips saludables de embarazo de acuerdo a las pautas de `DESIGN.md`.
+- Alaia es sorda; la LSE es parte central de su espacio, no decoración.
+- Cada animal incluye el signo de la Fundación CNSE y se abre con “Ver signo LSE”.
+- Ningún contenido debe depender solo del sonido: si algo se explica con audio, debe tener equivalente visual (imagen, signo, texto o estado visible).
+- El audio nunca suena sin un toque. El vídeo va mudo y en bucle.
+- La familia está aprendiendo LSE: mantén el vocabulario visible y correcto, usa “LSE” (no “lenguaje de señas”) y no inventes signos. Si un signo no existe en la fuente CNSE, avisa y propón alternativas.
+- Conserva la atribución y la licencia CC BY-NC-SA de los signos en `/alaia/animales/creditos`.
 
 ---
 
-## Tecnologías Utilizadas
+## Pruebas (obligatorio)
 
-- **Framework:** Next.js (App Router, TypeScript)
-- **Estilos:** Mantine 9 + CSS Modules + tipografías locales (Averia Libre y Nunito), basado en `DESIGN.md`
-- **Gestión de Estado:** React Context / Hooks
-- **Testing:** Vitest + React Testing Library
+- Cada funcionalidad nueva lleva prueba unitaria o de integración. Aplica a componentes, estado, validación, catálogo y utilidades.
+- Vitest + React Testing Library sobre jsdom. Renderiza con `render` de `@/lib/test-utils` para tener el `MantineProvider`.
+- Los mocks globales de `play` / `pause` / `load` y `matchMedia` viven en `src/lib/test-setup.ts`; amplía ahí si hace falta.
+- Coloca el test junto al archivo que prueba (`page.test.tsx`, `layout.test.tsx`, `*.test.ts`).
+- No cierres una tarea sin `npm test` en verde. Antes de entregar, pasa también `npm run lint`, `npx tsc --noEmit` y `npm run build`.
+
+---
+
+## Diseño
+
+- Lee `DESIGN.md` antes de tocar cualquier pantalla. Es la fuente única del sistema Crayon: paleta, Averia Libre + Nunito, radios, sombras, componentes, movimiento y accesibilidad.
+- Para el espacio de Alaia, lee además `DESIGN_ALAIA.md`: reglas de la etapa 1-3 años, launcher, tarjetas, reproductor, signos y créditos.
+- No hay temas por perfil: todos comparten el mismo sistema. El perfil solo cambia nombre, icono, acento de la paleta y contenido. No reintroduzcas `data-profile-theme` ni paletas alternativas.
+- Mobile-First. Objetivos táctiles de 44 px mínimo (56-64 px en acciones principales), foco visible, contraste AA y respeto a `prefers-reduced-motion`.
+- Textos en español de España, tuteo cálido y frases breves. Sin emojis en la UI: usa los doodles del sistema.
+
+---
+
+## Rutas y estado
+
+| Ruta | Pantalla | Estado |
+| --- | --- | --- |
+| `/` | Selector familiar (5 perfiles) | Activo |
+| `/alaia` | Launcher “Mundo de Alaia” | Activo |
+| `/alaia/animales` | Cuadrícula de 22 animales | Activo |
+| `/alaia/animales/creditos` | Fuentes y licencias | Activo |
+
+El catálogo tiene 22 animales: 9 de granja, 4 mascotas y 9 salvajes.
+
+---
+
+## Arquitectura
+
+- `src/lib/profiles.ts`: fuente de verdad de los perfiles. Añade `href` solo cuando la ruta exista; sin `href`, la tarjeta se muestra deshabilitada como “Muy pronto”.
+- `src/lib/alaia-apps.ts`: apps del launcher de Alaia.
+- `src/lib/alaia-animals.json`: fuente de verdad de animales, medios y créditos. `alaia-animals.ts` expone los tipos y helpers.
+- `src/app`: rutas del App Router. Cada pantalla tiene su CSS Module al lado.
+- `src/components`: piezas compartidas (`BrandMark`, `BackButton`, `Marker`, `PageDoodles`, `CrayonDoodles`).
+- `src/theme.ts` y `src/styles/design-tokens.css`: tema Mantine y tokens CSS. No dupliques valores fuera de ahí.
+- `scripts/build-alaia-media.mjs`: genera vídeos, pósters, audios, signos y `CREDITS.md` a partir del JSON.
+
+### Medios de animales
+
+No edites a mano `public/alaia/animales/**` ni `CREDITS.md`: se regeneran. El flujo completo (fuentes válidas, recorte, normalización, verificación y pruebas) está en la skill `.agents/skills/alaia-animals/SKILL.md`; cárgala siempre que toques animales o medios. Para comprobar el resultado:
+
+```bash
+node .agents/skills/alaia-animals/scripts/verify-media.mjs
+```
+
+---
+
+## Cambios y documentación
+
+- Los cambios de producto se planifican en `openspec/changes/<cambio>/` con `proposal.md`, `design.md` y `tasks.md`; las specs viven en `openspec/specs/`.
+- Hay un cambio abierto, `add-alaia-animal-sounds`, con una tarea pendiente de revisión humana del audio (8.7).
+- Si añades una pantalla o un perfil, actualiza el mapa de `DESIGN.md` y esta guía.
+
+---
+
+## Comandos
+
+```bash
+npm run dev        # Next.js en http://localhost:3000
+npm test           # Vitest
+npm run lint       # ESLint
+npx tsc --noEmit   # TypeScript
+npm run build      # Build de producción
+```
+
+---
+
+## Estado pendiente
+
+- Activar los espacios de Albany, Rubén, Lucía y Coco. Cada uno necesita su ruta, su objetivo y sus pruebas antes de añadir `href`.
+- Los metadatos raíz (`src/app/layout.tsx` y `src/app/layout.test.tsx`) todavía anuncian “Calendario de Tensión” y embarazo, herencia de la versión anterior. Deben pasar a describir el hub familiar.
+- `README.md` está vacío.
